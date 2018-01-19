@@ -9,6 +9,17 @@
 
 <body>
     <?
+        function aboutMe(){
+            $ret = "";
+            $ret .= "<ul>";
+            foreach($aboutMe as $i => $i_val){
+                if($i != "myName"){
+                    $ret .=  "<li>",$i," : ",$i_val,"</li>";
+                }
+            }
+            $ret .= "</ul>";
+            return $ret;
+        }
         include './includes/header.php';
         $aboutMe = array(
             "myName" => "Quinn McPhail",
@@ -18,13 +29,9 @@
             "favWebsite" => "http://www.reddit.com"
         );
         echo "<h1>",$aboutMe["myName"],"</h1>";
-        echo "<ul>";
-        foreach($aboutMe as $i => $i_val){
-            if($i != "myName"){
-                echo "<li>",$i," : ",$i_val,"</li>";
-            }
-        }
-        echo "</ul>";
+
+        echo aboutMe();
+
         include './includes/footer.php';
     ?>
 </body>
