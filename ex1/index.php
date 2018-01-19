@@ -14,7 +14,7 @@
             $ret .= "<ul>";
             foreach($aboutMe as $i => $i_val){
                 if($i != "myName"){
-                    $ret .=  "<li>",$i," : ",$i_val,"</li>";
+                    $ret .=  "<li>" . $i . " : " . $i_val . "</li>";
                 }
             }
             $ret .= "</ul>";
