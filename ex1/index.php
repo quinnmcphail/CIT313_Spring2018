@@ -19,8 +19,10 @@
         );
         echo "<h1>",$aboutMe["myName"],"</h1>";
         echo "<ul>";
-        for($i=1, $size = count($aboutMe); $i<$size;$i++){
-            echo "<li>",key($aboutMe)," : ",$aboutMe[$i],"</li>";
+        foreach($aboutMe as $i => $i_val){
+            if($i != "myName"){
+                echo "<li>",$i," : ",$i_val,"</li>";
+            }
         }
         echo "</ul>";
         include './includes/footer.php';
