@@ -10,13 +10,13 @@
 <body>
     <?
         include './includes/header.php';
-        $aboutMe = [
+        $aboutMe = array(
             "myName" => "Quinn McPhail",
             "favColor" => "Blue",
             "favMovie" => "John Wick",
             "favBook" => "Discipline Equals Freedom: Field Manual by Jocko Willink",
             "favWebsite" => "http://www.reddit.com"
-        ];
+        );
         echo "<h1>",$aboutMe["myName"],"</h1>";
         include './includes/footer.php';
     ?>
