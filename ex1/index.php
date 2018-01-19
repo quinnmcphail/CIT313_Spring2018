@@ -9,7 +9,7 @@
 
 <body>
     <?
-        function aboutMe(){
+        function aboutMe($aboutMe){
             $ret = "";
             $ret .= "<ul>";
             foreach($aboutMe as $i => $i_val){
@@ -30,7 +30,7 @@
         );
         echo "<h1>",$aboutMe["myName"],"</h1>";
 
-        echo aboutMe();
+        echo aboutMe($aboutMe);
 
         include './includes/footer.php';
     ?>
