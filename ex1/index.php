@@ -18,6 +18,11 @@
             "favWebsite" => "http://www.reddit.com"
         );
         echo "<h1>",$aboutMe["myName"],"</h1>";
+        echo "<ul>";
+        for($i=1; $i<count($aboutMe);$i++){
+            echo "<li>",key($aboutMe[$i])," : ",$aboutMe[$i],"</li>";
+        }
+        echo "</ul>";
         include './includes/footer.php';
     ?>
 </body>
