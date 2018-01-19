@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?
+    <?php
         function aboutMe($aboutMe){
             $ret = "";
             $ret .= "<ul>";
@@ -20,7 +20,9 @@
             $ret .= "</ul>";
             return $ret;
         }
+
         include './includes/header.php';
+
         $aboutMe = array(
             "myName" => "Quinn McPhail",
             "favColor" => "Blue",
@@ -28,6 +30,7 @@
             "favBook" => "Discipline Equals Freedom: Field Manual by Jocko Willink",
             "favWebsite" => "http://www.reddit.com"
         );
+
         echo "<h1>",$aboutMe["myName"],"</h1>";
 
         echo aboutMe($aboutMe);
