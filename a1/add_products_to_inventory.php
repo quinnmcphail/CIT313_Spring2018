@@ -44,7 +44,7 @@ for ($x=0; $x<=7; $x++) {
 		echo "Added " . $thisProductName . "<br />";
 
 		//create an empty produceItem variable
-		$produceItem = '';//##Made sure it was empty
+		$produceItem;
 
 		switch ($thisProduceType) {
 			case "f": //fruit
