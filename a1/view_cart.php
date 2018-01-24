@@ -24,6 +24,7 @@
 <?php
 	//get the cart stored in session
 	$aryCartArray = unserialize($_SESSION['aryCartArray']);
+	echo $aryCartArray;
 
 
 	//get the product array stored in session
