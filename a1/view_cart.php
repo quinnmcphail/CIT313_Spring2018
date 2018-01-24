@@ -1,4 +1,4 @@
- 
+
 <?php
 	//this page allows users to put items into a shopping cart
 	include_once('webconfig.php');
@@ -25,22 +25,22 @@
 	//get the cart stored in session
 	$aryCartArray = unserialize($_SESSION['aryCartArray']);
 
-	
+
 	//get the product array stored in session
 	$aryProductsArray = unserialize($_SESSION['aryProductArray']);
-	
+
 	//for each item in the cart array, loop through and write out the quantity and item name
-	
+
 	for ($x=0; $x < count($aryCartArray); $x++) {
-		
+
 		$aryCartItemArray = $aryCartArray[$x];
-		
+
 		//find the corresponding product in the product array
 
-		$thisProduct = $aryProductArray[$aryCartItemArray[0]]
-		
+		$thisProduct = $aryProductArray[$aryCartItemArray[0]];//##Added semicolon
+
 		echo "<b>" . $thisProduct->product_name . "</b>" . " Qty: " . $aryCartItemArray[1] . "<br />";
-		
+
 	}
 
 ?>

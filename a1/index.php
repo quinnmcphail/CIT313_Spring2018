@@ -20,7 +20,7 @@
 
 	<div class="form-container">
 
-	<form action="<?php echo 'URL_ROOT' . '/add_products_to_inventory.php' ?>" method="post">
+	<form action="<?php echo URL_ROOT . '/add_products_to_inventory.php';//##Removed quotes around URL_ROOT ?>" method="post">
 
     <?php
 		//create a loop that writes a form to allow up to 8 produce items to be added
@@ -55,7 +55,7 @@
 	</fieldset>
 
     <?php
-
+	// Changed from ) to }
 		}
 	?>
 
