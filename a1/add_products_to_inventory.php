@@ -28,24 +28,24 @@ $aryProductArray = array();
 //loop through the 8 sets of fields on the initial form to process all of the products
 
 for ($x=0; $x<=7; $x++) {
-	
+
 	//first, see if the product's name has been set.  If not, skip processing this product.
 	if (!empty($_POST['productname' . $x]))  {
-		
+
 		//produce item's name is not empty, so process this item
-		
-		
-		
+
+
+
 		$thisProductName = $_POST['productname' . $x];
 		$thisProduceType = $_POST['producetype' . $x];
 		$thisProductPriceType = $_POST['pricetype' . $x];
 		$thisProductPrice = $_POST['productprice' . $x];
-		
+
 		echo "Added " . $thisProductName . "<br />";
-		
+
 		//create an empty produceItem variable
 		$produceItem;
-		
+
 		switch ($thisProduceType) {
 			case "f": //fruit
 				//create fruit object
@@ -58,28 +58,28 @@ for ($x=0; $x<=7; $x++) {
 				$typeType = "Veggie";
 				break;
 		}
-		
+
 		if($produceItem->price_type == 2) {
-			$pType = "Each"
+			$pType = "Each";//##Added semicolon
 		}
 		else {
 			$pType = "Per Lb";
 		}
-		
+
 		echo "Product ID: " . $produceItem->product_id . "<br />";
 		echo "Product Name: " . $produceItem->product_name . "<br />";
 		echo "Product Type: ". $typeType . "<br />";
 		echo "Product Price: $". $produceItem->product_price . " ".$pType."<br /><hr/>";
-		
-		//add object to the array	
+
+		//add object to the array
 		array_push($aryProductArray, $produceItem);
-		
+
 	}
 	else {
 		//stop the loop at the first empty product name
-		break;	
+		break;
 	}
-	
+
 }
 
 //if the array is not empty, put it into the Session
