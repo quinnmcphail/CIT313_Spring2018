@@ -34,6 +34,9 @@
 	for ($x=0; $x < count($aryCartArray); $x++) {
 
 		$aryCartItemArray = $aryCartArray[$x];
+		foreach($aryCartItemArray as $value){
+			echo $value;
+		}
 
 		//find the corresponding product in the product array
 
