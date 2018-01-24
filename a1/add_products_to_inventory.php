@@ -54,7 +54,7 @@ for ($x=0; $x<=7; $x++) {
 				break;
 			case "v": //veg
 				//create veggie object
-				$produceItem = new veggie($x, $_thisProductName, $thisProductPriceType, $thisProductPrice);
+				$produceItem = new veggie($x, $thisProductName, $thisProductPriceType, $thisProductPrice);//##Removed underscore from thisProductName
 				$typeType = "Veggie";
 				break;
 		}
