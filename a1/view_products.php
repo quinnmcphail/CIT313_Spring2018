@@ -32,7 +32,7 @@
 		$aryProductArray = unserialize($_SESSION['aryProductArray']);
 
 
-		for ($x = 0; $x < count($arryProductArray); $x++) {
+		for ($x = 0; $x < count($aryProductArray); $x++) {//##Spelling error "arryProductArray"->"aryProductArray"
 	?>
     <fieldset>
 		<legend>Product Details</legend>
