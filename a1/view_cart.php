@@ -27,7 +27,7 @@
 
 
 	//get the product array stored in session
-	$aryProductsArray = unserialize($_SESSION['aryProductArray']);
+	$aryProductArray = unserialize($_SESSION['aryProductArray']);
 
 	//for each item in the cart array, loop through and write out the quantity and item name
 
@@ -38,7 +38,6 @@
 		//find the corresponding product in the product array
 
 		$thisProduct = $aryProductArray[$aryCartItemArray[0]];//##Added semicolon
-		echo $thisProduct;
 
 		echo "<b>" . $thisProduct->product_name . "</b>" . " Qty: " . $aryCartItemArray[1] . "<br />";
 
