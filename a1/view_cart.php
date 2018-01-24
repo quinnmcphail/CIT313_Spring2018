@@ -27,7 +27,7 @@
 
 
 	//get the product array stored in session
-	$aryProductArray = unserialize($_SESSION['aryProductArray']);
+	$aryProductArray = unserialize($_SESSION['aryProductArray']);//##Spelling Error "aryProductsArray"->"aryProductArray"
 
 	//for each item in the cart array, loop through and write out the quantity and item name
 
