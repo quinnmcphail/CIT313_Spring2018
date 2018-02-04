@@ -18,16 +18,16 @@
     $admin->email_address = 'quinn@mcphail.com';
 
     echo "User Level: " . $registeredUser->user_level . "<br>";
-    echo "User ID: " . $registeredUser->user_id . "<br>";
-    echo "User Type: " . $registeredUser->user_type . "<br>";
-    echo "First Name: " . $registeredUser->first_name . "<br>";
-    echo "Last Name: " . $registeredUser->last_name . "<br>";
-    echo "Email Address: " . $registeredUser->email_address . "<br><hr>";
+    echo "Registered User ID: " . $registeredUser->user_id . "<br>";
+    echo "Registered User Type: " . $registeredUser->user_type . "<br>";
+    echo "Registered First Name: " . $registeredUser->first_name . "<br>";
+    echo "Registered Last Name: " . $registeredUser->last_name . "<br>";
+    echo "Registered Email Address: " . $registeredUser->email_address . "<br><hr>";
 
     echo "User Level: " . $admin->user_level . "<br>";
-    echo "User ID: " . $admin->user_id . "<br>";
-    echo "User Type: " . $admin->user_type . "<br>";
-    echo "First Name: " . $admin->first_name . "<br>";
-    echo "Last Name: " . $admin->last_name . "<br>";
-    echo "Email Address: " . $admin->email_address . "<br>";
+    echo "Admin User ID: " . $admin->user_id . "<br>";
+    echo "Admin User Type: " . $admin->user_type . "<br>";
+    echo "Admin First Name: " . $admin->first_name . "<br>";
+    echo "Admin Last Name: " . $admin->last_name . "<br>";
+    echo "Admin Email Address: " . $admin->email_address . "<br>";
 ?>
