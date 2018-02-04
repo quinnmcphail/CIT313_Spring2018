@@ -1,0 +1,33 @@
+<?php
+    ini_set('display_errors',1);
+    error_reporting(E_ALL);
+
+    include_once('classes/user.class.php');
+    include_once('classes/registeredUser.class.php');
+    include_once('classes/admin.class.php');
+
+    $registeredUser = new RegisteredUser('user', 'Regular User');
+    $admin = new Admin('qmcphail','Administrator');
+
+    $registeredUser->first_name = 'User';
+    $registeredUser->last_name = 'Name';
+    $registeredUser->email_address = 'user@name.com';
+
+    $admin->first_name = 'Quinn';
+    $admin->last_name = 'McPhail';
+    $admin->email_address = 'quinn@mcphail.com';
+
+    echo "User Level: " . $registeredUser->user_level . "<br>";
+    echo "User ID: " . $registeredUser->user_id . "<br>";
+    echo "User Type: " . $registeredUser->user_type . "<br>";
+    echo "First Name: " . $registeredUser->first_name . "<br>";
+    echo "Last Name: " . $registeredUser->last_name . "<br>";
+    echo "Email Address: " . $registeredUser->email_address . "<br><hr>";
+
+    echo "User Level: " . $admin->user_level . "<br>";
+    echo "User ID: " . $admin->user_id . "<br>";
+    echo "User Type: " . $admin->user_type . "<br>";
+    echo "First Name: " . $admin->first_name . "<br>";
+    echo "Last Name: " . $admin->last_name . "<br>";
+    echo "Email Address: " . $admin->email_address . "<br>";
+?>
