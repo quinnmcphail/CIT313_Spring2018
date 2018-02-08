@@ -34,15 +34,11 @@ echo "Admin First Name: " . $admin->first_name . "<br>";
 echo "Admin Last Name: " . $admin->last_name . "<br>";
 echo "Admin Email Address: " . $admin->email_address . "<br><hr>";
 
-echo "Math Function: " . Admin::mathFunction(4, 6) . "<br>";
+echo "Math Function: " . Admin::mathFunction(4, 6) . "<br><hr>";
 ?>
-<html>
-<body>
 <form action="results.php" method="post">
 First Name: <input type="text" name="firstName"><br>
 Last Name: <input type="text" name="lastName"><br>
 Email Address: <input type="email" name="email"><br>
 <input type="submit">
 </form>
-</body>
-</html>
