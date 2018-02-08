@@ -12,7 +12,13 @@
     $POSTuser = new RegisteredUser('newuser', 'regular');
     $POSTuser->first_name = $_POST["firstName"];
     $POSTuser->last_name = $_POST["lastName"];
-    $POSTuser->emailAddress = $_POST["email"];
+    $POSTuser->email_address = $_POST["email"];
 
-    print_r($POSTuser);
+    if($POSTuser instanceof RegisteredUser){
+        echo "First Name: ".$POSTuser->first_name."<br>";
+        echo "Last Name: ".$POSTuser->last_name."<br>";
+        echo "Email Address: ".$POSTuser->email_address."<br>";
+    }else{
+        echo "The object is not an instance of RegisteredUser";
+    }
 ?>
