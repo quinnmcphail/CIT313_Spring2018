@@ -1,5 +1,5 @@
 <?php
-    class User
+    abstract class User
     {
         protected $user_id;
         protected $user_type;

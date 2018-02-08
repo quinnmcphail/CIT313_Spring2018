@@ -2,10 +2,6 @@
     ini_set('display_errors',1);
     error_reporting(E_ALL);
 
-    // include_once('classes/user.class.php');
-    // include_once('classes/registeredUser.class.php');
-    // include_once('classes/admin.class.php');
-
     function loadClasses($class){
         include_once('classes/'.strtolower($class).'.class.php');
     }
