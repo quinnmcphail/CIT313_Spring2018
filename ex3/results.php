@@ -14,5 +14,5 @@
     $POSTuser->last_name = $_POST["lastName"];
     $POSTuser->emailAddress = $_POST["email"];
 
-    echo $POSTuser;
+    print_r($POSTuser);
 ?>
