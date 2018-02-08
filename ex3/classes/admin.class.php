@@ -15,6 +15,10 @@
             return $this->$name;
         }
 
+        static public function mathFunction($a,$b){
+            return ($a+$b)*$a;
+        }
+
         public function __destruct(){}
     }
 ?>

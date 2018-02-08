@@ -32,4 +32,6 @@
     echo "Admin First Name: " . $admin->first_name . "<br>";
     echo "Admin Last Name: " . $admin->last_name . "<br>";
     echo "Admin Email Address: " . $admin->email_address . "<br>";
+
+    echo "Math Function: " . Admin::mathFunction(4,6) . "<br>";
 ?>
