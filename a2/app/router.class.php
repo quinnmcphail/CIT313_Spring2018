@@ -8,15 +8,18 @@
     {
         foreach(glob("app/*.class.php") as $filename){
             // include $filename;
-            echo $filename;
+            $file = explode("/",$filename);
+            echo $file[count($file)-1];
         }
         foreach(glob("app/controllers/*.class.php") as $filename){
             // include $filename;
-            echo $filename;
+            $file = explode("/",$filename);
+            echo $file[count($file)-1];
         }
         foreach(glob("app/models/*.class.php") as $filename){
             // include $filename;
-            echo $filename;
+            $file = explode("/",$filename);
+            echo $file[count($file)-1];
         }
     }
 
