@@ -20,7 +20,8 @@
         }
     }
 
-    spl_autoload_register('loadClasses');
+    // spl_autoload_register('loadClasses');
+    loadClasses();
 
     new Controller();
 ?>
