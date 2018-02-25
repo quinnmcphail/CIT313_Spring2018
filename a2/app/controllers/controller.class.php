@@ -11,11 +11,11 @@ class Controller {
     }
 
     function home(){
-        $this->user->set('userID','qmcphail');
-        $this->user->set('first_name','Quinn');
-        $this->user->set('last_name','McPhail');
-        $this->user->set('email','qmcphail@iupui.edu');
-        $this->user->set('role','admin');
+        $this->user->userID = 'qmcphail';
+        $this->user->first_name='Quinn';
+        $this->user->last_name='McPhail';
+        $this->user->email = 'qmcphail@iupui.edu';
+        $this->user->role = 'admin';
 
         $data = $this->user->getName();
         $this->load->view('view.php',$data);
