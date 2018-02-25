@@ -21,7 +21,7 @@
     }
 
     // spl_autoload_register('loadClasses');
-    loadClasses();
+    loadClasses("test");
 
     new Controller();
 ?>
