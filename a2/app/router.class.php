@@ -6,20 +6,23 @@
 
     function loadClasses($class)
     {
-        foreach(glob("app/*.class.php") as $filename){
+        foreach(glob("app/*.class.php") as $filepath){
             // include $filename;
-            $file = explode("/",$filename);
-            echo $file[count($file)-1];
+            $file = explode("/",$filepath);
+            $className = explode(".",$file[count($file)-1])[0];
+            echo $className;
         }
-        foreach(glob("app/controllers/*.class.php") as $filename){
+        foreach(glob("app/controllers/*.class.php") as $filepath){
             // include $filename;
-            $file = explode("/",$filename);
-            echo $file[count($file)-1];
+            $file = explode("/",$filepath);
+            $className = explode(".",$file[count($file)-1])[0];
+            echo $className;
         }
-        foreach(glob("app/models/*.class.php") as $filename){
+        foreach(glob("app/models/*.class.php") as $filepath){
             // include $filename;
-            $file = explode("/",$filename);
-            echo $file[count($file)-1];
+            $file = explode("/",$filepath);
+            $className = explode(".",$file[count($file)-1])[0];
+            echo $className;
         }
     }
 
