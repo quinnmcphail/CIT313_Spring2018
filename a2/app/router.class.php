@@ -6,15 +6,15 @@
 
     function loadClasses($class)
     {
-        foreach(glob('*.class.php') as $filename){
+        foreach(glob("app/*.class.php") as $filename){
             // include $filename;
             echo $filename;
         }
-        foreach(glob('controllers/*.class.php') as $filename){
+        foreach(glob("app/controllers/*.class.php") as $filename){
             // include $filename;
             echo $filename;
         }
-        foreach(glob('models/*.class.php') as $filename){
+        foreach(glob("app/models/*.class.php") as $filename){
             // include $filename;
             echo $filename;
         }
