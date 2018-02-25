@@ -9,19 +9,22 @@
         foreach(glob("app/*.class.php") as $filepath){
             // include $filename;
             $file = explode("/",$filepath);
-            $className = explode(".",$file[count($file)-1])[0];
+            $className = explode(".",$file[count($file)-1]);
+            $className = $className[0];
             echo $className;
         }
         foreach(glob("app/controllers/*.class.php") as $filepath){
             // include $filename;
             $file = explode("/",$filepath);
-            $className = explode(".",$file[count($file)-1])[0];
+            $className = explode(".",$file[count($file)-1]);
+            $className = $className[0];
             echo $className;
         }
         foreach(glob("app/models/*.class.php") as $filepath){
             // include $filename;
             $file = explode("/",$filepath);
-            $className = explode(".",$file[count($file)-1])[0];
+            $className = explode(".",$file[count($file)-1]);
+            $className = $className[0];
             echo $className;
         }
     }
