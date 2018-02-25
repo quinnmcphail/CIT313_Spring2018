@@ -7,7 +7,7 @@ class Controller {
     function __construct(){
         $this->load = new Load();
         $this->model = new Model();
-
+        $this->home();
     }
 
     function home(){
