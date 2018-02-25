@@ -10,5 +10,7 @@
         }
     }
 
+    spl_autoload_register('loadClasses');
+
     new Controller();
 ?>
