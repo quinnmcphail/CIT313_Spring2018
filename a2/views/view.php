@@ -9,7 +9,13 @@
 <body>
     <h1>Hello From My View!</h1>
     <?php
-        echo "My name is ".$first." ".$last."<br>";
+        echo "<ul>";
+        echo "<li>User ID: ".$userID."</li>";
+        echo "<li>First Name: ".$first_name."</li>";
+        echo "<li>Last Name: ".$last_name."</li>";
+        echo "<li>Email: ".$email."</li>";
+        echo "<li>Role: ".$role."</li>";
+        echo "</ul>";
     ?>
 </body>
 </html>
