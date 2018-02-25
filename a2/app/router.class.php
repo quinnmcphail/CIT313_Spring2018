@@ -1,36 +1,34 @@
 <?php
 
-    include_once 'app/controllers/controller.class.php';
-    include_once 'app/models/model.class.php';
-    include_once 'app/load.class.php';
-
     function loadClasses($class)
     {
         foreach(glob("app/*.class.php") as $filepath){
-            // include $filename;
             $file = explode("/",$filepath);
             $className = explode(".",$file[count($file)-1]);
             $className = $className[0];
-            echo $className;
+            if(strtolower($class)==$className){
+                include $filepath;
+            }
         }
         foreach(glob("app/controllers/*.class.php") as $filepath){
-            // include $filename;
             $file = explode("/",$filepath);
             $className = explode(".",$file[count($file)-1]);
             $className = $className[0];
-            echo $className;
+            if(strtolower($class)==$className){
+                include $filepath;
+            }
         }
         foreach(glob("app/models/*.class.php") as $filepath){
-            // include $filename;
             $file = explode("/",$filepath);
             $className = explode(".",$file[count($file)-1]);
             $className = $className[0];
-            echo $className;
+            if(strtolower($class)==$className){
+                include $filepath;
+            }
         }
     }
 
-    // spl_autoload_register('loadClasses');
-    loadClasses("test");
+    spl_autoload_register('loadClasses');
 
     new Controller();
 ?>
