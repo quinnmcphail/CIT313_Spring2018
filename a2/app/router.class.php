@@ -2,14 +2,14 @@
 
     function loadClasses($class)
     {
-        if(file_exists('app/'.$class.'.class.php')){
-            include 'app/'.$class.'.class.php';
+        if(file_exists('app/'.strtolower($class).'.class.php')){
+            include 'app/'.strtolower($class).'.class.php';
         }
-        if(file_exists('app/models/'.$class.'.class.php')){
-            include 'app/models/'.$class.'.class.php';
+        if(file_exists('app/models/'.strtolower($class).'.class.php')){
+            include 'app/models/'.strtolower($class).'.class.php';
         }
-        if(file_exists('app/controllers/'.$class.'.class.php')){
-            include 'app/controllers/'.$class.'.class.php';
+        if(file_exists('app/controllers/'.strtolower($class).'.class.php')){
+            include 'app/controllers/'.strtolower($class).'.class.php';
         }
         // foreach(glob("app/*.class.php") as $filepath){
         //     $file = explode("/",$filepath);
