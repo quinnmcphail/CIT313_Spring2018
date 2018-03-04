@@ -21,7 +21,7 @@
           <select name="post_category">
           <?php if (is_array($categories)) {
     foreach ($categories as $c) {?>
-            <option value="<?=$c["categoryID"];?>" <?=$categoryId == $c["categoryID"] ? 'selected' : '';?>><?=$c["name"];?></option>
+            <option value="<?=$c["categoryID"];?>" <?=$categoryID == $c["categoryID"] ? 'selected' : '';?>><?=$c["name"];?></option>
           <?php }}?>
           </select>
      			<label>Content</label>
