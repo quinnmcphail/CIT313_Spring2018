@@ -5,7 +5,7 @@ class Post extends Model
     public function getPost($pID)
     {
 
-        $sql = 'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName FROM posts WHERE pID = ? JOIN users ON posts.uID = users.uID JOIN categories ON posts.categoryID = categories.categoryID;';
+        $sql = 'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName FROM posts WHERE pID = ? JOIN users ON posts.uID = users.uID JOIN categories ON posts.categoryID = categories.categoryID';
 
         // perform query
         $results = $this->db->getrow($sql, array($pID));
@@ -24,7 +24,7 @@ class Post extends Model
             $numposts = ' LIMIT ' . $limit;
         }
 
-        $sql = 'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName FROM posts WHERE pID = ? JOIN users ON posts.uID = users.uID JOIN categories ON posts.categoryID = categories.categoryID;' . $numposts;
+        $sql = 'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName FROM posts WHERE pID = ? JOIN users ON posts.uID = users.uID JOIN categories ON posts.categoryID = categories.categoryID' . $numposts;
 
         // perform query
         $results = $this->db->execute($sql);
