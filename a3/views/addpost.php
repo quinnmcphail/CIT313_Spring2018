@@ -16,8 +16,7 @@
           <label>Title</label>
           <input type="text" class="span6" name="post_title" value="<?php echo $title?>">
           <label>Date</label>
-          <?php echo date("Y-m-d\TH:i:s",$date);?>
-          <input type="datetime-local" name="post_date" value="<?php echo date("Y-m-d\TH:i:s",$date);?>">
+          <input type="datetime-local" name="post_date" value="<?php echo date("Y-m-d\TH:i:s",strtotime($date));?>">
           <label>Category</label>
           <select name="post_category">
           <?php if(is_array($categories)){
