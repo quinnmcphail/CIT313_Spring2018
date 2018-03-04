@@ -18,6 +18,7 @@
           <label>Date</label>
           <input type="datetime-local" name="post_date" value="<?php echo $date?>">
           <label>Category</label>
+          <?php var_dump($categories);?>
           <select name="post_category">
           <?php if(is_array($categories)){
             extract($categories);?>
