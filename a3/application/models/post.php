@@ -1,47 +1,58 @@
 <?php
-class Post extends Model{
+class Post extends Model
+{
 
-	function getPost($pID){
+    public function getPost($pID)
+    {
 
-		$sql =  'SELECT pID, title, content, date, uID, categoryID FROM posts WHERE pID = ?';
+        $sql = 'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName
+		FROM posts
+		WHERE pID = ?
+		JOIN users ON posts.uID = users.uID
+		JOIN categories ON posts.categoryID = categories.categoryID;';
 
-		// perform query
-		$results = $this->db->getrow($sql, array($pID));
+        // perform query
+        $results = $this->db->getrow($sql, array($pID));
 
-		$post = $results;
+        $post = $results;
 
-		return $post;
+        return $post;
 
-	}
+    }
 
-	public function getAllPosts($limit = 0){
+    public function getAllPosts($limit = 0)
+    {
 
-		if($limit > 0){
+        if ($limit > 0) {
 
-			$numposts = ' LIMIT '.$limit;
-		}
+            $numposts = ' LIMIT ' . $limit;
+        }
 
-		$sql =  'SELECT pID, title, content, date, uID, categoryID FROM posts'.$numposts;
+        $sql = 'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName
+		FROM posts
+		WHERE pID = ?
+		JOIN users ON posts.uID = users.uID
+		JOIN categories ON posts.categoryID = categories.categoryID;' . $numposts;
 
-		// perform query
-		$results = $this->db->execute($sql);
+        // perform query
+        $results = $this->db->execute($sql);
 
-		while ($row=$results->fetchrow()) {
-			$posts[] = $row;
-		}
+        while ($row = $results->fetchrow()) {
+            $posts[] = $row;
+        }
 
-		return $posts;
+        return $posts;
 
-	}
+    }
 
-	public function addPost($data){
+    public function addPost($data)
+    {
 
-		$sql='INSERT INTO posts (title,content) VALUES (?,?)';
-		$this->db->execute($sql,$data);
-		$message = 'Post added.';
-		return $message;
+        $sql = 'INSERT INTO posts (title,content) VALUES (?,?)';
+        $this->db->execute($sql, $data);
+        $message = 'Post added.';
+        return $message;
 
-	}
-
+    }
 
 }
