@@ -50,9 +50,14 @@ class AddPostController extends Controller
         $this->set('date', $post['date']);
         $this->set('categoryID', $post['categoryID']);
         $this->set('task', 'update');
+    }
 
+    public function update()
+    {
+        $this->postObject = new Post();
         $data = array('title' => $_POST['post_title'], 'content' => $_POST['post_content'], 'date' => $_POST['post_date'], 'categoryID' => $_POST['post_category'], 'pID' => $_POST['pID']);
-        $this->postObject->updatePost($data);
+        $result = $this->postObject->updatePost($data);
+        $this->set('message', $result);
     }
 
 }
