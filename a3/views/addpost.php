@@ -18,12 +18,11 @@
           <label>Date</label>
           <input type="datetime-local" name="post_date" value="<?php echo $date?>">
           <label>Category</label>
-          <?php var_dump($categories);?>
           <select name="post_category">
           <?php if(is_array($categories)){
-            extract($categories);?>
-            <option value="<?php echo $categoryID;?>"><?php echo $name;?></option>
-          <?php }?>
+            foreach($categories as $c){?>
+            <option value="<?php echo $c["categoryID"];?>"><?php echo $c["name"];?></option>
+          <?php }}?>
           </select>
      			<label>Content</label>
           <textarea id="tinyeditor" name="post_content" style="width:556px;height: 200px"><?php echo $content?></textarea>
