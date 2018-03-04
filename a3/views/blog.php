@@ -28,7 +28,6 @@ if( is_array($post) ) {
 		<h4><?php echo date("j F Y - g:i:s A",strtotime($p['date']));?></h4>
 		<h4>By: <?php echo $p['userFN']." ".$p['userLN'];?></h4>
 		<h4>Category: <?php echo $p['catName'];?></h4>
-	<p><?php echo $p['content'];?></p>
 <?php }?>
 </div>
 
