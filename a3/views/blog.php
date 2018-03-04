@@ -24,7 +24,9 @@ if( is_array($post) ) {
   </div>
 
 	<?php foreach($posts as $p){?>
-    <h3><a href="<?php echo BASE_URL?>blog/view/<?php echo $p['pID'];?>" title="<?php echo $p['title'];?>"><?php echo $p['title'];?></a></h3><?php echo date("j F Y - g:i:s A",strtotime($p['date']));?>
+    <h3><a href="<?php echo BASE_URL?>blog/view/<?php echo $p['pID'];?>" title="<?php echo $p['title'];?>"><?php echo $p['title'];?></a></h3>
+		<h4><?php echo date("j F Y - g:i:s A",strtotime($p['date']));?></h4>
+		<h4>By: <?php echo $p['userFN']." ".$p['userLN'];?></h4>
 	<p><?php echo $p['content'];?></p>
 <?php }?>
 </div>
