@@ -1,6 +1,6 @@
 
 <?php include('elements/header.php');?>
-<?php 
+<?php
 if( is_array($post) ) {
 	extract($post);?>
 
@@ -9,7 +9,7 @@ if( is_array($post) ) {
 
 <h1><?php echo $title;?></h1>
   </div>
-
+<?php echo date($date);?>
 <?php echo $content;?>
 
 </div>
