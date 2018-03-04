@@ -16,7 +16,7 @@
           <label>Title</label>
           <input type="text" class="span6" name="post_title" value="<?php echo $title?>">
           <label>Date</label>
-          <input type="date" name="post_date" value="<?php echo $date?>">
+          <input type="datetime-local" name="post_date" value="<?php echo $date?>">
           <label>Category</label>
           <select name="post_category">
           <option>1</option>
