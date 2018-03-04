@@ -46,6 +46,7 @@
               <li class="active"><a href="<?php echo BASE_URL?>">Home</a></li>
               <li><a href="<?php echo BASE_URL?>blog/">Blog</a></li>
               <li><a href="<?php echo BASE_URL?>login/">Login</a></li>
+              <li><a href="<?php echo BASE_URL?>register/">Register</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
