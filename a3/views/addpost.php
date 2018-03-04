@@ -19,7 +19,10 @@
           <input type="datetime-local" name="post_date" value="<?php echo $date?>">
           <label>Category</label>
           <select name="post_category">
-          <option>1</option>
+          <?php if(is_array($categories)){
+            extract($categories);?>
+            <option value="<?php echo $categoryID;?>"><?php echo $name;?></option>
+          <?php }?>
           </select>
      			<label>Content</label>
           <textarea id="tinyeditor" name="post_content" style="width:556px;height: 200px"><?php echo $content?></textarea>
