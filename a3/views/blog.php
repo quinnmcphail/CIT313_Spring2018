@@ -9,8 +9,8 @@ if( is_array($post) ) {
 
 <h1><?php echo $title;?></h1>
   </div>
-<?php echo date($date);?>
-<?php echo $content;?>
+<p><?php echo date("j F Y \at g:i:sA",$date);?></p>
+<p><?php echo $content;?></p>
 
 </div>
 <?php }?>
