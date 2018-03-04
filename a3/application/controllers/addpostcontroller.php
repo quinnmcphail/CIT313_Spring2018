@@ -12,7 +12,6 @@ class AddPostController extends Controller
         $this->postObject = new Post();
         $this->set('task', 'add');
         $this->categoryObject = new Category();
-        $this->categoryObject = new Category();
 
         $categories = $this->categoryObject->getAllCategories();
 
@@ -23,7 +22,12 @@ class AddPostController extends Controller
     public function add()
     {
 
-        $this->postObject = new Post();
+		$this->postObject = new Post();
+		$this->categoryObject = new Category();
+
+        $categories = $this->categoryObject->getAllCategories();
+
+        $this->set('categories', $categories);
 
         $data = array('title' => $_POST['post_title'], 'content' => $_POST['post_content'], 'date' => $_POST['post_date'], 'categoryID' => $_POST['post_category']);
 
