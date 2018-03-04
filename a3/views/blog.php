@@ -25,9 +25,10 @@ if( is_array($post) ) {
 
 	<?php foreach($posts as $p){?>
     <h3><a href="<?php echo BASE_URL?>blog/view/<?php echo $p['pID'];?>" title="<?php echo $p['title'];?>"><?php echo $p['title'];?></a></h3>
-		<h4><?php echo date("j F Y - g:i:s A",strtotime($p['date']));?></h4>
-		<h4>By: <?php echo $p['userFN']." ".$p['userLN'];?></h4>
-		<h4>Category: <?php echo $p['catName'];?></h4>
+		<sub><?php echo date("j F Y - g:i:s A",strtotime($p['date']));?> by
+		<?php echo $p['userFN']." ".$p['userLN'];?></sub>
+		<sub>Category: <?php echo $p['catName'];?></sub>
+	<p><?php echo $p['content'];?></p>
 <?php }?>
 </div>
 
