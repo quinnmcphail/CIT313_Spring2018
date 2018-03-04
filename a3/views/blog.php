@@ -10,6 +10,8 @@ if (is_array($post)) {
 <h1><?php echo $title; ?></h1>
   </div>
 <p><?php echo date("j F Y - g:i:s A", strtotime($date)); ?></p>
+<p><?php echo $userFN . " " . $userLN; ?></p>
+<p><?php echo "Category: " . " " . $catName; ?></p>
 <p><?php echo $content; ?></p>
 
 </div>
