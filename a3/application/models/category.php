@@ -3,7 +3,7 @@ class Category extends Model{
 
 	function getCategory($categoryID){
 
-		$sql =  'SELECT categoryID, name FROM categories WHERE categoryID = ?';
+		$sql =  'SELECT * FROM categories WHERE categoryID = ?';
 
 		// perform query
 		$results = $this->db->getrow($sql, array($pID));
@@ -21,7 +21,7 @@ class Category extends Model{
 			$numcategories = ' LIMIT '.$limit;
 		}
 
-		$sql =  'SELECT categoryID, name FROM categories'.$numcategories;
+		$sql =  'SELECT * FROM categories'.$numcategories;
 
 		// perform query
 		$results = $this->db->execute($sql);

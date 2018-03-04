@@ -1,50 +1,50 @@
 <?php
 
-class AddPostController extends Controller{
+class AddPostController extends Controller
+{
 
-	public $postObject;
-	public $categoryObject;
+    public $postObject;
+    public $categoryObject;
 
-	public function defaultTask(){
+    public function defaultTask()
+    {
 
-		$this->postObject = new Post();
-		$this->set('task', 'add');
-		$this->categoryObject = new Category();
+        $this->postObject = new Post();
+        $this->set('task', 'add');
+        $this->categoryObject = new Category();
+        $this->categoryObject = new Category();
 
-	}
+        $categories = $this->categoryObject->getAllCategories();
 
-	public function add(){
+        $this->set('categories', $categories);
 
-			$this->postObject = new Post();
-			$this->categoryObject = new Category();
+    }
 
-			$categories = $this->categoryObject->getAllCategories();
+    public function add()
+    {
 
-			$this->set('categories', $categories);
+        $this->postObject = new Post();
 
-			$data = array('title'=>$_POST['post_title'],'content'=>$_POST['post_content']);
+        $data = array('title' => $_POST['post_title'], 'content' => $_POST['post_content']);
 
+        $result = $this->postObject->addPost($data);
 
-			$result = $this->postObject->addPost($data);
+        $this->set('message', $result);
 
-			$this->set('message', $result);
+    }
 
+    public function edit($pID)
+    {
 
-	}
+        $this->postObject = new Post();
 
-	public function edit($pID){
+        $post = $this->postObject->getPost($pID);
 
-			$this->postObject = new Post();
+        $this->set('pID', $post['pID']);
+        $this->set('title', $post['title']);
+        $this->set('content', $post['content']);
+        $this->set('task', 'update');
 
-			$post = $this->postObject->getPost($pID);
-
-			$this->set('pID', $post['pID']);
-			$this->set('title', $post['title']);
-			$this->set('content', $post['content']);
-			$this->set('task', 'update');
-
-
-	}
-
+    }
 
 }
