@@ -9,9 +9,9 @@ if (is_array($post)) {
 
 <h1><?php echo $title; ?></h1>
   </div>
-<p><?php echo date("j F Y - g:i:s A", strtotime($date)); ?></p>
-<p><?php echo $userFN . " " . $userLN; ?></p>
-<p><?php echo "Category: " . " " . $catName; ?></p>
+<p><sub><?php echo date("j F Y - g:i:s A", strtotime($date)); ?></sub></p>
+<p><sub><?php echo $userFN . " " . $userLN; ?></sub></p>
+<p><sub><?php echo "Category: " . " " . $catName; ?></sub></p>
 <p><?php echo $content; ?></p>
 
 </div>
