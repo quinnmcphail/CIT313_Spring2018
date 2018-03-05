@@ -2,13 +2,14 @@
 <div class="container">
 	<div class="page-header">
    <h1> the Register View </h1>
-   <?php if ($message) {?>
+  </div>
+  <?php if ($message) {?>
     <div class="alert alert-success">
     <button type="button" class="close" data-dismiss="alert">×</button>
     	<?=$message?>
     </div>
   <?php }?>
-   <form class="form-horizontal" action="<?=BASE_URL?>register/do_register" method="post">
+   <form class="form-horizontal" action="<?=BASE_URL?>register/<?=$task?>" method="post">
   <div class="control-group">
     <label class="control-label" for="inputEmail">Email</label>
     <div class="controls">
@@ -39,8 +40,6 @@
     </div>
   </div>
 </form>
-
-  </div>
 </div>
 <?php include 'elements/footer.php';?>
 
