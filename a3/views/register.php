@@ -2,6 +2,12 @@
 <div class="container">
 	<div class="page-header">
    <h1> the Register View </h1>
+   <?php if ($message) {?>
+    <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    	<?=$message?>
+    </div>
+  <?php }?>
    <form class="form-horizontal">
   <div class="control-group">
     <label class="control-label" for="inputEmail">Email</label>

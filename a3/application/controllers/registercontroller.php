@@ -1,18 +1,27 @@
 <?php
 
-class RegisterController extends Controller{
+class RegisterController extends Controller
+{
+    public $userObject;
 
+    public function defaultTask()
+    {
 
+        $this->userObject = new User();
+        $this->set('task', 'add');
 
-   public function add($num1 = 0,$num2 = 0,$num3 = 0){
+    }
 
+    public function add()
+    {
 
-		$sum = $num1+$num2+$num3;
+        $this->userObject = new User();
 
+        $data = array('first_name'=>$_POST['firstName'],'last_name'=>$_POST['lastName'],'email'=>$_POST['email'],'password'=>password_hash($_POST['password'],PASSWORD_DEFAULT));
 
-	   $this->set('numbers',$sum);
+        $result = $this->postObject->addUser($data);
 
-   }
+        $this->set('message', $result);
 
-
+    }
 }
