@@ -4,15 +4,7 @@ class RegisterController extends Controller
 {
     public $userObject;
 
-    public function defaultTask()
-    {
-
-        $this->userObject = new User();
-        $this->set('task', 'add');
-
-    }
-
-    public function add()
+    public function do_register()
     {
 
         $this->userObject = new User();
