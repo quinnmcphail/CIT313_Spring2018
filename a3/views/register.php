@@ -1,7 +1,7 @@
 <?php include 'elements/header.php';?>
 <div class="container">
 	<div class="page-header">
-   <h1> the Register View </h1>
+   <h1>Register</h1>
   </div>
   <?php if ($message) {?>
     <div class="alert alert-success">

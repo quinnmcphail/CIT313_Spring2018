@@ -19,7 +19,7 @@ class MembersController extends Controller
 
         $this->userObject = new User();
         $users = $this->userObject->getAllUsers();
-        $this->set('title', 'The Default User View');
+        $this->set('title', 'Users');
         $this->set('users', $users);
 
     }

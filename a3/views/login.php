@@ -1,7 +1,7 @@
 <?php include 'elements/header.php';?>
 <div class="container">
 	<div class="page-header">
-   <h1> the Login View </h1>
+   <h1>Login</h1>
   </div>
   <form class="form-horizontal" action="<?=BASE_URL?>login/do_login" method="post">
   <div class="control-group">
