@@ -1,25 +1,27 @@
 <?php
 
-class MembersController extends Controller{
+class MembersController extends Controller
+{
 
-	public $userObject;
+    public $userObject;
 
-   	public function view($uID){
+    public function view($uID)
+    {
 
-		$this->userObject = new User();
-		$user = $this->userObject->getUser($uID);
-	  	$this->set('user',$user);
+        $this->userObject = new User();
+        $user = $this->userObject->getUser($uID);
+        $this->set('user', $user);
 
-   	}
+    }
 
-	public function defaultTask(){
+    public function defaultTask()
+    {
 
-		$this->userObject = new User();
-		$users = $this->userObject->getAllUsers();
-		$this->set('title', 'The Default User View');
-		$this->set('users',$users);
+        $this->userObject = new User();
+        $users = $this->userObject->getAllUsers();
+        $this->set('title', 'The Default User View');
+        $this->set('users', $users);
 
-	}
-
+    }
 
 }
