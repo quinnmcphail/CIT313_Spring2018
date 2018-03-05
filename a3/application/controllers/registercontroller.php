@@ -17,9 +17,9 @@ class RegisterController extends Controller
 
         $this->userObject = new User();
 
-        $data = array('first_name'=>$_POST['firstName'],'last_name'=>$_POST['lastName'],'email'=>$_POST['email'],'password'=>password_hash($_POST['password'],PASSWORD_DEFAULT));
+        $data = array('first_name' => $_POST['firstName'], 'last_name' => $_POST['lastName'], 'email' => $_POST['email'], 'password' => password_hash($_POST['password'], PASSWORD_DEFAULT));
 
-        $result = $this->postObject->addUser($data);
+        $result = $this->userObject->addUser($data);
 
         $this->set('message', $result);
 
