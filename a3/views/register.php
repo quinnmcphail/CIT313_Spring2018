@@ -8,7 +8,7 @@
     	<?=$message?>
     </div>
   <?php }?>
-   <form class="form-horizontal">
+   <form class="form-horizontal" action="<?=BASE_URL?>register/<?=$task?>" method="post">
   <div class="control-group">
     <label class="control-label" for="inputEmail">Email</label>
     <div class="controls">
