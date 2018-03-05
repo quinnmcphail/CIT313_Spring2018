@@ -6,7 +6,7 @@ class MembersController extends Controller{
 
    	public function view($uID){
 
-		$this->userObject = new Uost();
+		$this->userObject = new User();
 		$user = $this->userObject->getUser($uID);
 	  	$this->set('user',$user);
 
