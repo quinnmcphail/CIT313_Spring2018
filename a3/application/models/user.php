@@ -1,5 +1,5 @@
 <?php
-class Post extends Model
+class User extends Model
 {
     public function getUser($uID)
     {
