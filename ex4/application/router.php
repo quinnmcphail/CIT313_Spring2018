@@ -1,4 +1,5 @@
 <?php
+session_start();
 function autoloader($class){
 
 		if(file_exists('application/'.strtolower($class).'.php')){
