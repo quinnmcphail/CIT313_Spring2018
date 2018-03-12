@@ -17,7 +17,7 @@ class LoginController extends Controller
             $userInfo = $this->userObject->getUserFromEmail($_POST['email']);
 
             $_SESSION['uID'] = $userInfo['uID'];
-            header("Location: " . BASE_URL . "home.php");
+            header("Location: " . BASE_URL);
         } else {
             $this->set('message', 'Incorrect Login Information');
         }
@@ -25,6 +25,6 @@ class LoginController extends Controller
     public function logout()
     {
         unset($_SESSION["uID"]);
-        header("Location: " . BASE_URL . "home.php");
+        header("Location: " . BASE_URL);
     }
 }
