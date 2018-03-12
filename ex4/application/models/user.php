@@ -77,8 +77,7 @@ class User extends Model
     {
         $sql = "SELECT email, password FROM users WHERE email = ?";
         $result = $this->db->getrow($sql, array($email));
-        $user = $result;
-        $password_db = $user[1];
+        $password_db = $result[1];
         if (password_verify($password, $password_db)) {
             return true;
         } else {
