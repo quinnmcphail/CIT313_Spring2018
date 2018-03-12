@@ -3,6 +3,12 @@
 	<div class="page-header">
    <h1>Login</h1>
   </div>
+  <?php if ($message) {?>
+    <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    	<?=$message?>
+    </div>
+  <?php }?>
   <form class="form-horizontal" action="<?=BASE_URL?>login/do_login" method="post">
   <div class="control-group">
     <label class="control-label" for="inputEmail">Email</label>
