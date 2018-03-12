@@ -30,6 +30,32 @@ class User extends Model
         return $user;
     }
 
+    public function getUserName()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+    public function isRegistered()
+    {
+        if (isset($this->user_type)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function isAdmin()
+    {
+        if ($this->user_type == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function getUserFromID($uID)
     {
         $sql = "SELECT * FROM users WHERE uID = ?";
