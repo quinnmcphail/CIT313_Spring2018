@@ -20,6 +20,7 @@ class LoginController extends Controller
             header("Location: " . BASE_URL);
         } else {
             $this->set('message', 'Incorrect Login Information');
+            header("Location: " . BASE_URL . "/login");
         }
     }
     public function logout()
