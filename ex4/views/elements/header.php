@@ -16,8 +16,11 @@
       }
     </style>
     <link href="<?php echo BASE_URL ?>views/css/bootstrap-responsive.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo BASE_URL?>application/plugins/tinyeditor/tinyeditor.css">
-
+    <?php
+if ($u->isAdmin()) {
+    ?>
+    <link rel="stylesheet" href="<?php echo BASE_URL ?>application/plugins/tinyeditor/tinyeditor.css">
+    <?php }?>
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
