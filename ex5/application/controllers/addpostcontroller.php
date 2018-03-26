@@ -6,6 +6,8 @@ class AddPostController extends Controller
     public $postObject;
     public $categoryObject;
 
+    protected $access = 1;
+
     public function defaultTask()
     {
 
