@@ -19,8 +19,8 @@ class Controller
 
         //check access to the page
         if ($this->access == 1 && !$u->isAdmin()) {
-            header('Location: ' . BASE_URL . 'login/');
             $_SESSION['redirect'] = $view;
+            header('Location: ' . BASE_URL . 'login/');
         } else {
             //run any task methods
             if ($method) {

@@ -18,7 +18,7 @@ class LoginController extends Controller
 
             $_SESSION['uID'] = $userInfo['uID'];
 
-            if (isset($_SESSION['redirect'])) {
+            if (strlen($_SESSION['redirect']) > 0) {
                 $view = $_SESSION['redirect'];
                 unset($_SESSION['redirect']);
                 header("Location: " . BASE_URL . $view);
