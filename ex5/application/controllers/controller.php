@@ -15,13 +15,12 @@ class Controller
         new Model();
 
         //check the user object
-		$u = new User();
-
-		$_SESSION['redirect'] = $view;
+        $u = new User();
 
         //check access to the page
         if ($this->access == 1 && !$u->isAdmin()) {
             header('Location: ' . BASE_URL . 'login/');
+            $_SESSION['redirect'] = $view;
         } else {
             //run any task methods
             if ($method) {
