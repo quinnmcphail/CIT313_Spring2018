@@ -1,9 +1,9 @@
 <?php include 'elements/header.php';?>
 <div class="container">
-<?php if ($message) {?>
+<?php if (isset($_GET['action']) && $_GET['action'] == 'logout') {?>
     <div class="alert alert-success">
     <button type="button" class="close" data-dismiss="alert">×</button>
-    	<?=$message?>
+    	Successfully logged out.
     </div>
   <?php }?>
 	<div class="page-header">

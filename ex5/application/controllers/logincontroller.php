@@ -26,6 +26,7 @@ class LoginController extends Controller
     public function logout()
     {
         unset($_SESSION["uID"]);
-        header("Location: " . BASE_URL . 'homeLogout/');
+        session_write_close();
+        header("Location: " . BASE_URL . '?action=logout');
     }
 }
