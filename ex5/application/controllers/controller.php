@@ -69,4 +69,9 @@ class Controller
 
     }
 
+    public function homeLogout()
+    {
+        $this->set('message', 'User has been logged out.');
+    }
+
 }
