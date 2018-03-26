@@ -17,7 +17,14 @@ class LoginController extends Controller
             $userInfo = $this->userObject->getUserFromEmail($_POST['email']);
 
             $_SESSION['uID'] = $userInfo['uID'];
-            header("Location: " . BASE_URL);
+
+            if (isset($_SESSION['redirect'])) {
+                $view = $_SESSION['redirect'];
+                unset($_SESSION['redirect']);
+                header("Location: " . BASE_URL . $view);
+            } else {
+                header("Location: " . BASE_URL);
+            }
         } else {
             $this->set('message', 'Incorrect Login Information');
             $this->set('task', 'do_login');

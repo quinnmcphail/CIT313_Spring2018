@@ -15,7 +15,9 @@ class Controller
         new Model();
 
         //check the user object
-        $u = new User();
+		$u = new User();
+
+		$_SESSION['redirect'] = $view;
 
         //check access to the page
         if ($this->access == 1 && !$u->isAdmin()) {
