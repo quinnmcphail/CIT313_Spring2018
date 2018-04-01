@@ -1,54 +1,59 @@
 <?php
-class Post extends Model{
+class Post extends Model
+{
 
-	function getPost($pID){
+    public function getPost($pID)
+    {
 
-		$sql =  'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName FROM posts JOIN users ON posts.uID = users.uID JOIN categories ON posts.categoryID =categories.categoryID WHERE pID = ?;';
+        $sql = 'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName FROM posts JOIN users ON posts.uID = users.uID JOIN categories ON posts.categoryID =categories.categoryID WHERE pID = ?;';
 
-		// perform query
-		$results = $this->db->getrow($sql, array($pID));
+        // perform query
+        $results = $this->db->getrow($sql, array($pID));
 
-		$post = $results;
+        $post = $results;
 
-		return $post;
+        return $post;
 
-	}
+    }
 
-	public function getAllPosts($limit = 0){
+    public function getAllPosts($limit = 0)
+    {
 
-		if($limit > 0){
+        $numposts = '';
+        if ($limit > 0) {
 
-			$numposts = ' LIMIT '.$limit;
-		}
+            $numposts = ' LIMIT ' . $limit;
+        }
 
-		$sql =  'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName FROM posts JOIN users ON posts.uID = users.uID JOIN categories ON posts.categoryID =categories.categoryID;'.$numposts;
+        $sql = 'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName FROM posts JOIN users ON posts.uID = users.uID JOIN categories ON posts.categoryID =categories.categoryID;' . $numposts;
 
-		// perform query
-		$results = $this->db->execute($sql);
+        // perform query
+        $results = $this->db->execute($sql);
 
-		while ($row=$results->fetchrow()) {
-			$posts[] = $row;
-		}
+        while ($row = $results->fetchrow()) {
+            $posts[] = $row;
+        }
 
-		return $posts;
+        return $posts;
 
-	}
+    }
 
-	public function addPost($data){
+    public function addPost($data)
+    {
 
-		$sql='INSERT INTO posts (title,content,date,categoryID) VALUES (?,?,?,?)';
-		$this->db->execute($sql,$data);
-		$message = 'Post added.';
-		return $message;
+        $sql = 'INSERT INTO posts (title,content,date,categoryID) VALUES (?,?,?,?)';
+        $this->db->execute($sql, $data);
+        $message = 'Post added.';
+        return $message;
 
-	}
+    }
 
-	public function updatePost($data){
-		$sql='UPDATE posts SET title = ?, content = ?, date = ?, categoryID = ? WHERE pID = ?';
-		$this->db->execute($sql,$data);
-		$message = 'Post updated.';
-		return $message;
-	}
-
+    public function updatePost($data)
+    {
+        $sql = 'UPDATE posts SET title = ?, content = ?, date = ?, categoryID = ? WHERE pID = ?';
+        $this->db->execute($sql, $data);
+        $message = 'Post updated.';
+        return $message;
+    }
 
 }
