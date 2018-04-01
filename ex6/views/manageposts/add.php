@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="page-header">
-   <h1><?=ucwords($task);?> Post</h1>
+   <h1>Add Post</h1>
   </div>
   <?php if ($message) {?>
     <div class="alert alert-success">

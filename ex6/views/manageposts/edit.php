@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="page-header">
-   <h1><?=ucwords($task);?> Post</h1>
+   <h1>Edit Post</h1>
   </div>
   <?php if ($message) {?>
     <div class="alert alert-success">
@@ -12,7 +12,7 @@
   <?php }?>
   <div class="row">
       <div class="span8">
-        <form action="<?=BASE_URL?>addpost/<?=$task?>" method="post" onsubmit="editor.post()">
+        <form action="<?=BASE_URL?>manageposts/<?=$task?>" method="post" onsubmit="editor.post()">
           <label>Title</label>
           <input type="text" class="span6" name="post_title" value="<?=$title?>">
           <label>Date</label>
