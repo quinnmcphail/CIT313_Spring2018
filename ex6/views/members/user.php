@@ -1,4 +1,4 @@
-<?php include 'elements/header.php';?>
+<?php include 'views/elements/header.php';?>
 <?php if (is_array($user)) {
     extract($user);}?>
 <div class="container">
@@ -8,4 +8,4 @@
     <p>First Name: <?=$first_name?></p>
     <p>Last Name: <?=$last_name?></p>
     <p>Email: <?=$email?></p>
-<?php include 'elements/footer.php';?>
+<?php include 'views/elements/footer.php';?>
