@@ -5,7 +5,7 @@ class MembersController extends Controller
 
     public $userObject;
 
-    public function view($uID)
+    public function user($uID)
     {
 
         $this->userObject = new User();
@@ -14,7 +14,7 @@ class MembersController extends Controller
 
     }
 
-    public function defaultTask()
+    public function index()
     {
 
         $this->userObject = new User();
