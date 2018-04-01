@@ -3,7 +3,7 @@
 class HomeController extends Controller
 {
 
-    public function defaultTask()
+    public function index()
     {
 
     }
