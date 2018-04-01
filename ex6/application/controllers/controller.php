@@ -60,7 +60,7 @@ class Controller
     /*
      *The defaultTask() method is the one run if no task method is run. Here as a placeholder for child classes.
      */
-    public function defaultTask()
+    public function index()
     {
 
     }
