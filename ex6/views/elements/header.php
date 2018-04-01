@@ -47,7 +47,7 @@ if ($u->isAdmin()) {
           <a class="brand" href="<?php echo BASE_URL ?>">MVC Pro</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="<?php echo BASE_URL ?>">Home</a></li>
+              <li><a href="<?php echo BASE_URL ?>">Home</a></li>
               <li><a href="<?php echo BASE_URL ?>blog/">Blog</a></li>
               <li><a href="<?php echo BASE_URL ?>members/">Members</a></li>
             </ul>
