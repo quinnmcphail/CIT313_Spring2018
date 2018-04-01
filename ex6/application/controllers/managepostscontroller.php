@@ -9,7 +9,6 @@ class ManagePostsController extends Controller
     protected $access = 1;
 
     public function index(){
-
     }
 
     public function add()
