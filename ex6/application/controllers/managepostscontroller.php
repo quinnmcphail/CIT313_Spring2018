@@ -29,7 +29,7 @@ class ManagePostsController extends Controller
 
         $this->postObject = new Post();
 
-        $data = array('title' => $_POST['post_title'], 'content' => $_POST['post_content'], 'date' => $_POST['post_date'], 'categoryID' => $_POST['post_category']);
+        $data = array('title' => $_POST['post_title'], 'content' => $_POST['post_content'], 'date' => $_POST['post_date'], 'categoryID' => $_POST['post_category'], 'uID'=>$u->uID);
 
         $result = $this->postObject->addPost($data);
 

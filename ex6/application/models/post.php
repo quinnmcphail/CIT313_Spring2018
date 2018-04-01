@@ -41,7 +41,7 @@ class Post extends Model
     public function addPost($data)
     {
 
-        $sql = 'INSERT INTO posts (title,content,date,categoryID) VALUES (?,?,?,?)';
+        $sql = 'INSERT INTO posts (title,content,date,categoryID,uID) VALUES (?,?,?,?,?)';
         $this->db->execute($sql, $data);
         $message = 'Post added.';
         return $message;
