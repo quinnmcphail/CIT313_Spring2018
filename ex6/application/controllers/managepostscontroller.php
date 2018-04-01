@@ -8,7 +8,8 @@ class ManagePostsController extends Controller
 
     protected $access = 1;
 
-    public function index(){
+    public function index()
+    {
     }
 
     public function add()
@@ -29,7 +30,7 @@ class ManagePostsController extends Controller
 
         $this->postObject = new Post();
 
-        $data = array('title' => $_POST['post_title'], 'content' => $_POST['post_content'], 'date' => $_POST['post_date'], 'categoryID' => $_POST['post_category'], 'uID'=>$u->uID);
+        $data = array('title' => $_POST['post_title'], 'content' => $_POST['post_content'], 'date' => $_POST['post_date'], 'categoryID' => $_POST['post_category'], 'uID' => $_SESSION['uID']);
 
         $result = $this->postObject->addPost($data);
 
