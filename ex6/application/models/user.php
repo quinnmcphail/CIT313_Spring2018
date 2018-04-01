@@ -74,6 +74,7 @@ class User extends Model
 
     public function getAllUsers($limit = 0)
     {
+        $numusers = '';
         if ($limit > 0) {
 
             $numusers = ' LIMIT ' . $limit;
