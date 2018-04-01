@@ -1,4 +1,4 @@
-<?php include 'elements/header.php';?>
+<?php include 'views/elements/header.php';?>
 <div class="container">
 <?php if (isset($_GET['action']) && $_GET['action'] == 'logout') {?>
     <div class="alert alert-success">
@@ -10,4 +10,4 @@
     <h1>Home</h1>
   </div>
 </div>
-<?php include 'elements/footer.php';?>
+<?php include 'views/elements/footer.php';?>
