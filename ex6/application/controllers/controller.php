@@ -3,7 +3,7 @@
 class Controller
 {
 
-    public $load;
+    public $view;
     public $data = array();
 
     protected $access;
@@ -11,7 +11,7 @@ class Controller
     public function __construct($view, $method = null, $parameters = null)
     {
         //instantiate the load class
-        $this->load = new Load();
+        $this->view = new View();
         new Model();
 
         //check the user object
@@ -26,10 +26,15 @@ class Controller
             if ($method) {
                 $this->runTask($method, $parameters);
             } else {
-                $this->defaultTask();
+                $this->index();
+                $method = 'index';
             }
             //render the view
-            $this->load->view($view . '.php', $this->data);
+            if (file_exists('views/' . strtolower($view) . '/' . strtolower($method) . '.php')) {
+                $this->view->load($view, $method, $this->data);
+            } else {
+                $this->view->load($view, 'index', $this->data);
+            }
         }
     }
 
