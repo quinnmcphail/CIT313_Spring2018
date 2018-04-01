@@ -35,7 +35,6 @@ if ($paths[1] == '') {
 $method = $paths[2];
 
 //check to see if any parameters are passed and assign the $parameters array
-$parameters[] = [];
 for ($i = 3; $i < count($paths); $i++) {
 
     $parameters[] = $paths[$i];
