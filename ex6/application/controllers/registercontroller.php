@@ -4,7 +4,7 @@ class RegisterController extends Controller
 {
     public $userObject;
 
-    public function defaultTask(){
+    public function index(){
 
 		$this->set('task','do_register');
 
