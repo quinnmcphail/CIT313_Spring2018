@@ -1,6 +1,6 @@
 <?php
 
-class AddPostController extends Controller
+class ManagePostsController extends Controller
 {
 
     public $postObject;
@@ -8,11 +8,15 @@ class AddPostController extends Controller
 
     protected $access = 1;
 
-    public function defaultTask()
+    public function index(){
+
+    }
+
+    public function add()
     {
 
         $this->postObject = new Post();
-        $this->set('task', 'add');
+        $this->set('task', 'save');
         $this->categoryObject = new Category();
 
         $categories = $this->categoryObject->getAllCategories();
@@ -21,7 +25,7 @@ class AddPostController extends Controller
 
     }
 
-    public function add()
+    public function save()
     {
 
         $this->postObject = new Post();
