@@ -10,7 +10,7 @@ class HomeController extends Controller
         // foreach($items as $item){
         //     echo($item->title."<br>");
         // }
-        echo($items);
+        var_dump($items);
     }
 
 }
