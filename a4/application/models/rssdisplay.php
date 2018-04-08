@@ -12,6 +12,7 @@ class RssDisplay extends Model{
     public function getFeedItems($num_feed_items){
         $items = simplexml_load_file($this->feed_url);
         $items = $items->channel->item;
+        $items = $this->xml2array($items);
 
         // if(!is_null($num_feed_items)){
         //     $itemsSlice = array_slice($items,0,0-(count($items)-$num_feed_items));
@@ -25,5 +26,12 @@ class RssDisplay extends Model{
     public function getChannelInfo(){
         $channel = simplexml_load_file($this->feed_url);
         return $channel->channel;
+    }
+
+    private function xml2array($xmlObject,$out=array()){
+        foreach((array)$xmlObject as $index=>$node){
+            $out[$index] = (is_object($node)||is_array($node))?xml2array($node):$node;
+        }
+        return $out;
     }
 }
