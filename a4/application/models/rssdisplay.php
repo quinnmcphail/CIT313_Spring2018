@@ -15,8 +15,6 @@ class RssDisplay extends Model
     {
         $items = simplexml_load_file($this->feed_url);
         $items = $items->channel->item;
-        $jsonString = json_encode($items);
-        $items = json_decode($jsonString,true);
 
         // if(!is_null($num_feed_items)){
         //     $itemsArray = array_slice($itemsArray,0,$num_feed_items);
