@@ -14,7 +14,7 @@ class RssDisplay extends Model{
         $items = $items->channel->item;
 
         if(!is_null($num_feed_items)){
-            $itemsSlice = array_slice($items,0,$num_feed_items);
+            $itemsSlice = array_slice($items,0,0-(count($items)-$num_feed_items));
             $items = $itemsSlice;
             $this->num_feed_items = $num_feed_items;
         }
