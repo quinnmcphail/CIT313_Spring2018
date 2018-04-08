@@ -32,12 +32,18 @@ class RssDisplay extends Model
         return $channel->channel;
     }
 
-    protected function xml2array($xmlObject, $out = array())
+    public function xml2array($xml)
     {
-        foreach ((array) $xmlObject as $index => $node) {
-            $out[$index] = (is_object($node) || is_array($node)) ? xml2array($node) : $node;
-        }
+        $arr = array();
 
-        return $out;
+        foreach ($xml->children() as $r) {
+            $t = array();
+            if (count($r->children()) == 0) {
+                $arr[$r->getName()] = strval($r);
+            } else {
+                $arr[$r->getName()][] = xml2array($r);
+            }
+        }
+        return $arr;
     }
 }
