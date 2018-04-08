@@ -10,6 +10,7 @@ class HomeController extends Controller
         foreach($items as $item){
             echo($item->title."<br>");
         }
+        echo(array_slice($items,0,1));
     }
 
 }
