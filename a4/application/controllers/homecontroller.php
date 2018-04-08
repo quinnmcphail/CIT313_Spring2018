@@ -5,12 +5,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        $rss = new RssDisplay("http://fox59.com/feed");
-        $items = $rss->getFeedItems(2);
-        foreach($items as $item){
-            echo($item["title"]."<br>");
-        }
-        var_dump($items);
+        $rss = new RssDisplay("http://digitaltrends.com/feed");
+        $this->set("feed_data",$rss->getFeedItems(8));
+        $this->set("channel_info",$rss->getChannelInfo());
     }
 
 }
