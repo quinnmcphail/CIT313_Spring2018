@@ -27,7 +27,7 @@ class RssDisplay extends Model
             $i["title"] = (string) $item->title;
             $i["description"] = (string) $item->description;
             $i["link"] = (string) $item->link;
-            $i["pubDate"] = strftime("j F Y - g:i:s A",strtotime((string) $item->pubDate));
+            $i["pubDate"] = date("j F Y - g:i:s A",strtotime((string) $item->pubDate));
             $i["category"] = (string) $item->category[0];
             array_push($feed,$i);
             $limit++;
