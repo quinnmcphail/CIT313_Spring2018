@@ -1,15 +1,18 @@
 <?php
-class RssDisplay extends Model{
+class RssDisplay extends Model
+{
     protected $feed_url;
     protected $num_feed_items;
 
-    public function __construct($url){
+    public function __construct($url)
+    {
         parent::__construct();
 
         $this->feed_url = $url;
     }
 
-    public function getFeedItems($num_feed_items){
+    public function getFeedItems($num_feed_items)
+    {
         $items = simplexml_load_file($this->feed_url);
         $items = $items->channel->item;
         $itemsArray = $this->xml2array($items);
@@ -23,15 +26,18 @@ class RssDisplay extends Model{
         return $itemsArray;
     }
 
-    public function getChannelInfo(){
+    public function getChannelInfo()
+    {
         $channel = simplexml_load_file($this->feed_url);
         return $channel->channel;
     }
 
-    private function xml2array($xmlObject,$out=array()){
-        foreach((array)$xmlObject as $index=>$node){
-            $out[$index] = (is_object($node)||is_array($node))?xml2array($node):$node;
+    protected function xml2array($xmlObject, $out = array())
+    {
+        foreach ((array) $xmlObject as $index => $node) {
+            $out[$index] = (is_object($node) || is_array($node)) ? xml2array($node) : $node;
         }
+
         return $out;
     }
 }
