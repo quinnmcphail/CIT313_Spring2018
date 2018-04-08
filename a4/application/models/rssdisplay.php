@@ -19,7 +19,7 @@ class RssDisplay extends Model
         $limit = 0;
 
         foreach ($items as $item) {
-            if ($limit = $num_feed_items) {
+            if ($limit == $num_feed_items) {
                 break;
             }
 
