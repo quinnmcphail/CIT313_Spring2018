@@ -17,11 +17,10 @@ class RssDisplay extends Model
         $items = $items->channel->item;
         $itemsArray = $this->xml2array($items);
 
-        // if(!is_null($num_feed_items)){
-        //     $itemsSlice = array_slice($items,0,0-(count($items)-$num_feed_items));
-        //     $items = $itemsSlice;
-        //     $this->num_feed_items = $num_feed_items;
-        // }
+        if(!is_null($num_feed_items)){
+            $itemsArray = array_slice($itemsArray,0,$num_feed_items);
+            $this->num_feed_items = $num_feed_items;
+        }
 
         return $itemsArray;
     }
