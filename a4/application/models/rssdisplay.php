@@ -30,6 +30,7 @@ class RssDisplay extends Model
             $i["pubDate"] = (string) $item->pubDate;
             $i["category"] = (string) $item->category[0];
             array_push($feed,$i);
+            $limit++;
         }
 
         return $feed;
