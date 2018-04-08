@@ -11,17 +11,28 @@ class RssDisplay extends Model
         $this->feed_url = $url;
     }
 
-    public function getFeedItems($num_feed_items)
+    public function getFeedItems($num_feed_items = -1)
     {
         $items = simplexml_load_file($this->feed_url);
         $items = $items->channel->item;
+        $feed = array();
+        $limit = 0;
 
-        // if(!is_null($num_feed_items)){
-        //     $itemsArray = array_slice($itemsArray,0,$num_feed_items);
-        //     $this->num_feed_items = $num_feed_items;
-        // }
+        foreach ($items as $item) {
+            if ($limit = $num_feed_items) {
+                break;
+            }
 
-        return $items;
+            $i = array();
+            $i["title"] = (string) $item->title;
+            $i["description"] = (string) $item->description;
+            $i["link"] = (string) $item->link;
+            $i["pubDate"] = (string) $item->pubDate;
+            $i["category"] = (string) $item->category[0];
+            array_push($feed,$i);
+        }
+
+        return $feed;
     }
 
     public function getChannelInfo()
