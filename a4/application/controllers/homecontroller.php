@@ -8,7 +8,7 @@ class HomeController extends Controller
         $rss = new RssDisplay("http://fox59.com/feed");
         $items = $rss->getFeedItems(2);
         foreach($items as $item){
-            echo($item."<br>");
+            echo($item->title."<br>");
         }
         var_dump($items);
     }
