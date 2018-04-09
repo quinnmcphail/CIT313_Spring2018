@@ -34,8 +34,6 @@ $(document).ready(function(){
 		}).then((data)=>{
 			el.parent().append(data);
 			el.remove();
-		}).catch((err)=>{
-			console.error(err);
 		});
 	});
 });
