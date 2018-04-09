@@ -24,7 +24,7 @@ $(document).ready(function(){
       type:'POST',
       url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAqE-JNdbQVfq_N0xGGFlR2MRXDkqnG-P0'
     }).done(function(data){
-      showLocation(geo);
+      showLocation(data);
     });
 });
 
