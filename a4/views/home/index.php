@@ -33,7 +33,7 @@ function showLocation(geo){
     var longitude = geo.location.lng;
     $.ajax({
         type:'POST',
-        url:'<?php echo BASE_URL; ?>getLocation',
+        url:'<?php echo BASE_URL; ?>ajax/get_location',
         data:'latitude='+latitude+'&longitude='+longitude
     }).then((data)=>{
       console.log(data);
