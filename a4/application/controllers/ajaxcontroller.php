@@ -15,7 +15,7 @@ class AjaxController extends Controller
             $status = $data->status;
 
             if ($status == "OK") {
-                $location = $data->results[0]->formatted_address;
+                $location = $data->results[0];
             } else {
                 $location = '';
             }
