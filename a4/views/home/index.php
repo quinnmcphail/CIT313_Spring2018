@@ -24,14 +24,14 @@ $(document).ready(function(){
       type:'POST',
       url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAqE-JNdbQVfq_N0xGGFlR2MRXDkqnG-P0',
       success:function(msg){
-        console.log(msg);
+        showLocation(msg);
       }
     })
 });
 
 function showLocation(position){
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
+    var latitude = msg.location.lat;
+    var longitude = msg.location.lng;
     $.ajax({
         type:'POST',
         url:'<?php echo BASE_URL; ?>getLocation',
