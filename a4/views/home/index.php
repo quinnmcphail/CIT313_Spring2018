@@ -7,7 +7,11 @@
     </div>
   <?php }?>
 	<div class="page-header">
-  <p>Your Location: <span id="location"></span></p>
+  <h3>Current Weather For : <span id="location"></span></h3>
+  <h4 id="weather"></h4>
+  <h4>Temperature: <span id="temp"></span></h4>
+  <h4>Wind: <span id="wind"></span></h4>
+  <h4>Humidity: <span id="humidity"></span> (<span id="trend"></span>)</h4>
     <h1>Articles From <?php echo $channel_info->title; ?></h1>
   </div>
   <?php foreach ($feed_data as $article) {?>
@@ -46,7 +50,12 @@ function getWeather(zip){
     url:'<?php echo BASE_URL; ?>ajax/get_weather',
     data:'zip='+zip
   }).then((data)=>{
-    console.log(data);
+    $('#location').html(data.current_observation.display_location.full);
+    $('#weather').html(data.current_observation.weather);
+    $('#temp').html(data.current_observation.temperature_string);
+    $('#wind').html(data.current_observation.wind_string);
+    $('#humidity').html(data.current_observation.pressure_in);
+    $('#trend').html(data.current_observation.pressure_trend);
   })
 }
 </script>
