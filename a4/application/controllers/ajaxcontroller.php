@@ -34,7 +34,7 @@ class AjaxController extends Controller
             $json = @file_get_contents($url);
             $data = json_decode($json);
 
-            $this->set("response", $data->response);
+            $this->set("response", $data->current_observation);
         }
     }
 }
