@@ -8,7 +8,7 @@
   <?php }?>
 	<div class="page-header">
   <h3>Current Weather For: <span id="location"></span></h3>
-  <h4 id="weather"></h4>
+  <h4>Conditions: <span id="weather"></span></h4>
   <h4>Temperature: <span id="temp"></span></h4>
   <h4>Wind: <span id="wind"></span></h4>
   <h4>Humidity: <span id="humidity"></span> (<span id="trend"></span>)</h4>
