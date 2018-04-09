@@ -35,12 +35,12 @@ function showLocation(geo){
         type:'POST',
         url:'<?php echo BASE_URL; ?>getLocation',
         data:'latitude='+latitude+'&longitude='+longitude
-    }).done(function(msg){
-            if(msg){
-               $("#location").html(msg);
+    }).then((data)=>{
+      if(msg){
+               $("#location").html(data);
             }else{
                 $("#location").html('Not Available');
             }
-        });
+    });
 }
 </script>
