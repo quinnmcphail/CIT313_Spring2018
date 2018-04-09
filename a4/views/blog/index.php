@@ -31,9 +31,10 @@ $(document).ready(function(){
 		$.ajax({
 			url:el.attr('href'),
 			type:'GET',
-		}).then((data)=>{
-			el.parent().append(data);
-			el.remove();
+			success:function(data){
+				el.parent().append(data);
+				el.remove();
+			}
 		});
 	});
 });
