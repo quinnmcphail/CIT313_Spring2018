@@ -32,7 +32,8 @@ $(document).ready(function(){
 function showLocation(geo){
     var latitude = geo.location.lat;
     var longitude = geo.location.lng;
-    $.ajax({
+    setTimeout(() => {
+      $.ajax({
         type:'POST',
         url:'<?php echo BASE_URL; ?>getLocation',
         data:'latitude='+latitude+'&longitude='+longitude,
@@ -44,5 +45,6 @@ function showLocation(geo){
             }
         }
     });
+    }, 2000);
 }
 </script>
