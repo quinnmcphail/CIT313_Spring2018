@@ -20,7 +20,10 @@ class AjaxController extends Controller
                 $location = '';
             }
 
-            $this->set("response", $location);
+            $match = array();
+            preg_match('/\d{5}\g/',$location,$match);
+
+            $this->set("response", $match[0]);
         }
     }
 }
