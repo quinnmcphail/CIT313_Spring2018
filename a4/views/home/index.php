@@ -23,17 +23,18 @@ $(document).ready(function(){
     $.ajax({
       type:'POST',
       url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAqE-JNdbQVfq_N0xGGFlR2MRXDkqnG-P0',
-      success:function(geo){
-        showLocation(geo);
-      }
+      // success:function(geo){
+      //   showLocation(geo);
+      // }
+    }).done(function(data){
+      console.log(data);
     })
 });
 
 function showLocation(geo){
     var latitude = geo.location.lat;
     var longitude = geo.location.lng;
-    setTimeout(() => {
-      $.ajax({
+    $.ajax({
         type:'POST',
         url:'<?php echo BASE_URL; ?>getLocation',
         data:'latitude='+latitude+'&longitude='+longitude,
@@ -45,6 +46,5 @@ function showLocation(geo){
             }
         }
     });
-    }, 2000);
 }
 </script>
