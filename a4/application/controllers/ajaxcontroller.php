@@ -32,7 +32,6 @@ class AjaxController extends Controller
         if (!empty($_POST['zip'])) {
             $url = 'http://api.wunderground.com/api/9275ef0b6f8bd4ea/conditions/q/' . trim($_POST['zip']) . '.json';
             $json = @file_get_contents($url);
-            $data = json_decode($json);
 
             $this->set("response", $json);
         }

@@ -50,13 +50,12 @@ function getWeather(zip){
     url:'<?php echo BASE_URL; ?>ajax/get_weather',
     data:'zip='+zip
   }).then((data)=>{
-    console.log(data);
-    // $('#location').html(data.current_observation.display_location.full);
-    // $('#weather').html(data.current_observation.weather);
-    // $('#temp').html(data.current_observation.temperature_string);
-    // $('#wind').html(data.current_observation.wind_string);
-    // $('#humidity').html(data.current_observation.pressure_in);
-    // $('#trend').html(data.current_observation.pressure_trend);
+    $('#location').html(data.current_observation.display_location.full);
+    $('#weather').html(data.current_observation.weather);
+    $('#temp').html(data.current_observation.temperature_string);
+    $('#wind').html(data.current_observation.wind_string);
+    $('#humidity').html(data.current_observation.pressure_in);
+    $('#trend').html(data.current_observation.pressure_trend);
   })
 }
 </script>
