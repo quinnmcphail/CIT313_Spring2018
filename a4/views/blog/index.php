@@ -27,6 +27,7 @@
 $(document).ready(function(){
 	$('.post-loader').click((e)=>{
 		e.preventDefault();
+		console.log($(this));
 		let el = $(this);
 		$.ajax({
 			url:el.attr('href'),
