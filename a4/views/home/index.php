@@ -22,13 +22,10 @@
 $(document).ready(function(){
     $.ajax({
       type:'POST',
-      url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAqE-JNdbQVfq_N0xGGFlR2MRXDkqnG-P0',
-      // success:function(geo){
-      //   showLocation(geo);
-      // }
+      url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAqE-JNdbQVfq_N0xGGFlR2MRXDkqnG-P0'
     }).done(function(data){
-      console.log(data);
-    })
+      showLocation(geo);
+    });
 });
 
 function showLocation(geo){
@@ -37,14 +34,13 @@ function showLocation(geo){
     $.ajax({
         type:'POST',
         url:'<?php echo BASE_URL; ?>getLocation',
-        data:'latitude='+latitude+'&longitude='+longitude,
-        success:function(msg){
+        data:'latitude='+latitude+'&longitude='+longitude
+    }).done(function(msg){
             if(msg){
                $("#location").html(msg);
             }else{
                 $("#location").html('Not Available');
             }
-        }
-    });
+        });
 }
 </script>
