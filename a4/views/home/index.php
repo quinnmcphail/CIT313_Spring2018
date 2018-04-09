@@ -59,7 +59,7 @@ function getWeather(zip){
     $('#trend').html(dataObj.current_observation.pressure_trend);
     let image = $('<img>');
     image.attr("src",dataObj.current_observation.icon_url)
-    image.appendTo('#weather');
+    image.appendTo('#location');
   })
 }
 </script>
