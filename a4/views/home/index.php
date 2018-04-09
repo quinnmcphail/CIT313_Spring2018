@@ -58,7 +58,8 @@ function getWeather(zip){
     $('#humidity').html(dataObj.current_observation.pressure_in);
     $('#trend').html(dataObj.current_observation.pressure_trend);
     let image = $('<img>');
-    image.attr("src",dataObj.current_observation.icon_url)
+    image.attr("src",dataObj.current_observation.icon_url);
+    image.attr("height","1.17em");
     image.appendTo('#location');
   })
 }
