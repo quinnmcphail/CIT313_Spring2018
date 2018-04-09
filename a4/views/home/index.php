@@ -23,15 +23,15 @@ $(document).ready(function(){
     $.ajax({
       type:'POST',
       url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAqE-JNdbQVfq_N0xGGFlR2MRXDkqnG-P0',
-      success:function(msg){
-        showLocation(msg);
+      success:function(geo){
+        showLocation(geo);
       }
     })
 });
 
-function showLocation(position){
-    var latitude = msg.location.lat;
-    var longitude = msg.location.lng;
+function showLocation(geo){
+    var latitude = geo.location.lat;
+    var longitude = geo.location.lng;
     $.ajax({
         type:'POST',
         url:'<?php echo BASE_URL; ?>getLocation',
