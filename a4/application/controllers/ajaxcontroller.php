@@ -21,7 +21,7 @@ class AjaxController extends Controller
             }
 
             $match = array();
-            preg_match('/\d{5}\g/',$location,$match);
+            preg_match('/\d{5}/',$location,$match);
 
             $this->set("response", $match[0]);
         }
