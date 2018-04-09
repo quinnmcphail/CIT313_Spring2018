@@ -7,8 +7,8 @@
     </div>
   <?php }?>
 	<div class="page-header">
-  <h3>Current Weather For : <span id="location"></span></h3>
-  <h4 id="weather"><span><img id="weatherImg"></span></h4>
+  <h3>Current Weather For: <span id="location"></span></h3>
+  <h4 id="weather"><span id="weatherImg"></span></h4>
   <h4>Temperature: <span id="temp"></span></h4>
   <h4>Wind: <span id="wind"></span></h4>
   <h4>Humidity: <span id="humidity"></span> (<span id="trend"></span>)</h4>
@@ -57,7 +57,9 @@ function getWeather(zip){
     $('#wind').html(dataObj.current_observation.wind_string);
     $('#humidity').html(dataObj.current_observation.pressure_in);
     $('#trend').html(dataObj.current_observation.pressure_trend);
-    $('#weatherImg').attr("src",dataObj.current_observation.icon_url);
+    let image = $('<img>');
+    image.attr("src",dataObj.current_observation.icon_url)
+    image.appendTo('#weatherImg');
   })
 }
 </script>
