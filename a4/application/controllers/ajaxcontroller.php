@@ -31,7 +31,7 @@ class AjaxController extends Controller
     {
         if (!empty($_POST['zip'])) {
             $xml = simplexml_load_file('http://api.wunderground.com/api/9275ef0b6f8bd4ea/forecast/q/' . trim($_POST['zip']) . '.xml');
-            $this->set("response", $xml);
+            $this->set("response", json_encode($xml));
         }
     }
 }
