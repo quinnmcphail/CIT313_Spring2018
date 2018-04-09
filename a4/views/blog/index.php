@@ -25,9 +25,8 @@
 <?php include 'views/elements/footer.php';?>
 <script>
 $(document).ready(function(){
-	$('.post-loader').click((e)=>{
+	$('.post-loader').click(function(e){
 		e.preventDefault();
-		console.log(this);
 		let el = $(this);
 		$.ajax({
 			url:el.attr('href'),
