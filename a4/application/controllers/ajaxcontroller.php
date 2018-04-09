@@ -30,8 +30,11 @@ class AjaxController extends Controller
     public function get_weather()
     {
         if (!empty($_POST['zip'])) {
-            $xml = simplexml_load_file('http://api.wunderground.com/api/9275ef0b6f8bd4ea/forecast/q/' . trim($_POST['zip']) . '.xml');
-            $this->set("response", json_encode($xml));
+            $url = 'http://api.wunderground.com/api/9275ef0b6f8bd4ea/forecast/q/' . trim($_POST['zip']) . '.json';
+            $json = @file_get_contents($url);
+            $data = json_decode($json);
+
+            $this->set("response", $data);
         }
     }
 }
