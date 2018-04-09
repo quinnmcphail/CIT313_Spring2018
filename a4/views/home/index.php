@@ -32,17 +32,18 @@ $(document).ready(function(){
 function showLocation(geo){
     var latitude = geo.location.lat;
     var longitude = geo.location.lng;
-    $.ajax({
-        type:'POST',
-        url:'<?php echo BASE_URL; ?>getLocation',
-        data:'latitude='+latitude+'&longitude='+longitude,
-        success:function(msg){
-            if(msg){
-               $("#location").html(msg);
-            }else{
-                $("#location").html('Not Available');
-            }
-        }
-    });
+    console.log(latitude,longitude);
+    // $.ajax({
+    //     type:'POST',
+    //     url:'<?php echo BASE_URL; ?>getLocation',
+    //     data:'latitude='+latitude+'&longitude='+longitude,
+    //     success:function(msg){
+    //         if(msg){
+    //            $("#location").html(msg);
+    //         }else{
+    //             $("#location").html('Not Available');
+    //         }
+    //     }
+    // });
 }
 </script>
