@@ -36,7 +36,11 @@ function showLocation(geo){
         url:'<?php echo BASE_URL; ?>ajax/get_location',
         data:'latitude='+latitude+'&longitude='+longitude
     }).then((data)=>{
-      console.log(data);
+      if(data){
+        $('#location').html(data);
+      }else{
+        $('#location').html("Location not found.")
+      }
     });
 }
 </script>
