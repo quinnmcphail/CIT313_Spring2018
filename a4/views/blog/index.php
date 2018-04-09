@@ -15,13 +15,16 @@
 	<sub><?php echo date("j F Y - g:i:s A", strtotime($p['date'])); ?> by
 		<?php echo $p['userFN'] . " " . $p['userLN']; ?> -
 		Category: <?php echo $p['catName']; ?></sub>
-	<div style="margin-top:15px;"><a href="<?php echo BASE_URL;?>ajax/get_post_content/?pID=<?php echo $p['pID'];?>" class="btn post-loader">View entire post</a></div>
+	<div style="margin-top:15px;"><a href="<?php echo BASE_URL; ?>ajax/get_post_content/?pID=<?php echo $p['pID']; ?>" class="btn post-loader">View entire post</a></div>
 <?php }?>
 </div>
 
 <?php }?>
+
+
+<?php include 'views/elements/footer.php';?>
 <script>
-$(document).ready(()=>{
+$(document).ready(function(){
 	$('.post-loader').click((e)=>{
 		e.preventDefault();
 		let el = $(this);
@@ -37,6 +40,3 @@ $(document).ready(()=>{
 	});
 });
 </script>
-
-
-<?php include 'views/elements/footer.php';?>
