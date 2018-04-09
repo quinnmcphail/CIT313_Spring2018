@@ -20,11 +20,13 @@
 <?php include 'views/elements/footer.php';?>
 <script>
 $(document).ready(function(){
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(showLocation);
-    }else{
-        $('#location').html('Geolocation is not supported by this browser.');
-    }
+    $.ajax({
+      type:'POST',
+      url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAqE-JNdbQVfq_N0xGGFlR2MRXDkqnG-P0',
+      success:function(msg){
+        console.log(msg);
+      }
+    })
 });
 
 function showLocation(position){
