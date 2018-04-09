@@ -20,27 +20,28 @@
 <?php include 'views/elements/footer.php';?>
 <script>
 $(document).ready(function(){
-    $.ajax({
+    let res = $.ajax({
       type:'POST',
       url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAqE-JNdbQVfq_N0xGGFlR2MRXDkqnG-P0'
     }).done(function(data){
       showLocation(data);
     });
+    console.log(res);
 });
 
 function showLocation(geo){
     var latitude = geo.location.lat;
     var longitude = geo.location.lng;
-    $.ajax({
-        type:'POST',
-        url:'<?php echo BASE_URL; ?>getLocation',
-        data:'latitude='+latitude+'&longitude='+longitude
-    }).done(function(msg){
-            if(msg){
-               $("#location").html(msg);
-            }else{
-                $("#location").html('Not Available');
-            }
-        });
+    // $.ajax({
+    //     type:'POST',
+    //     url:'<?php echo BASE_URL; ?>getLocation',
+    //     data:'latitude='+latitude+'&longitude='+longitude
+    // }).done(function(msg){
+    //         if(msg){
+    //            $("#location").html(msg);
+    //         }else{
+    //             $("#location").html('Not Available');
+    //         }
+    //     });
 }
 </script>
