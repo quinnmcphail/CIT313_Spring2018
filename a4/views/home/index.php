@@ -24,11 +24,11 @@ $(document).ready(function(){
       type:'POST',
       url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAqE-JNdbQVfq_N0xGGFlR2MRXDkqnG-P0'
     }).then((data)=>{
-      showLocation(data);
+      getLocation(data);
     });
 });
 
-function showLocation(geo){
+function getLocation(geo){
     var latitude = geo.location.lat;
     var longitude = geo.location.lng;
     $.ajax({
@@ -36,11 +36,17 @@ function showLocation(geo){
         url:'<?php echo BASE_URL; ?>ajax/get_location',
         data:'latitude='+latitude+'&longitude='+longitude
     }).then((data)=>{
-      if(data){
-        $('#location').html(data);
-      }else{
-        $('#location').html("Location not found.")
-      }
+      getWeather(data);
     });
+}
+
+function getWeather(zip){
+  $.ajax({
+    type:'POST',
+    url:'<?php echo BASE_URL; ?>ajax/get_weather',
+    data:'zip='+zip
+  }).then((data)=>{
+    console.log(data);
+  })
 }
 </script>

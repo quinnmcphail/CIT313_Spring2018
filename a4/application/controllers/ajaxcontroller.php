@@ -21,9 +21,17 @@ class AjaxController extends Controller
             }
 
             $match = array();
-            preg_match('/\d{5}/',$location,$match);
+            preg_match('/\d{5}/', $location, $match);
 
             $this->set("response", $match[0]);
+        }
+    }
+
+    public function get_weather()
+    {
+        if (!empty($_POST['zip'])) {
+            $xml = simplexml_load_file('http://api.wunderground.com/api/9275ef0b6f8bd4ea/forecast/q/' . trim($_POST['zip']) . '.xml');
+            $this->set("response", $xml);
         }
     }
 }
