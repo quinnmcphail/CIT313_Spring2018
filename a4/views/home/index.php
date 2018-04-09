@@ -20,11 +20,11 @@
 <?php include 'views/elements/footer.php';?>
 <script>
 $(document).ready(function(){
-    let res = $.ajax({
+    $.ajax({
       type:'POST',
       url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAqE-JNdbQVfq_N0xGGFlR2MRXDkqnG-P0'
-    }).done(function(data){
-      showLocation(data);
+    }).then((data)=>{
+      console.log(data);
     });
 });
 
