@@ -16,7 +16,7 @@ if (is_array($post)) {
 		Category: <?php echo $catName; ?></sub>
 <hr>
 <h2>Comments</h2>
-<div style="margin-top:15px;"><a href="<?php echo BASE_URL; ?>ajax/get_post_comments/?pID=<?php echo $p['pID']; ?>" class="btn post-loader">View All Comments</a></div>
+<div style="margin-top:15px;"><a href="<?php echo BASE_URL; ?>ajax/get_post_comments/?pID=<?php echo $pID; ?>" class="btn post-loader">View All Comments</a></div>
 </div>
 
 
@@ -30,8 +30,7 @@ $(document).ready(function(){
 			url:el.attr('href'),
 			type:'GET',
 			success:function(data){
-				el.parent().append(data);
-				el.remove();
+				console.log(data);
 			}
 		});
 	});
