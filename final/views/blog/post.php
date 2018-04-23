@@ -49,6 +49,11 @@ $(document).ready(function(){
              }
           });
        });
+	$('.comment-deleter').click(function(e){
+		e.preventDefault();
+		let el = $(this);
+		console.log(el.attr('comment'));
+	})
 });
 function Date_toYMD() {
         let year, month, day,hour,minute,second;
@@ -86,7 +91,7 @@ function refreshComments(){
 				data = JSON.parse(data);
 				if(data!==null){
 					data.map(e=>{
-					comments.append(`<hr><p>${e.commentText}<?php if($u->isAdmin()) {?><a href="" comment="${e.commentID}" class="btn comment-deleter">Delete Comment</a><?php }?></p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
+					comments.append(`<hr><p>${e.commentText}<?php if($u->isAdmin()) {?> <a href="" comment="${e.commentID}" class="btn comment-deleter">Delete Comment</a><?php }?></p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
 				});
 				}else{
 					comments.append("<hr><p>No comments.</p>")
