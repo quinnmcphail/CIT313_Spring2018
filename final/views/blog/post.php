@@ -16,7 +16,8 @@ if (is_array($post)) {
 		Category: <?php echo $catName; ?></sub>
 <hr>
 <h2>Comments</h2>
-<div style="margin-top:15px;"><a href="<?php echo BASE_URL; ?>ajax/get_post_comments/?pID=<?php echo $pID; ?>" class="btn post-loader">View All Comments</a></div>
+<div id="comments" style="margin-top:15px;"></div>
+<a href="<?php echo BASE_URL; ?>ajax/get_post_comments/?pID=<?php echo $pID; ?>" class="btn post-loader">View All Comments</a>
 <?php if ($u->isRegistered()) {?>
 	<form id="commentForm" method="post" style="margin-top:21px;">
           <input id="commentText" type="text" class="span6" name="commentText" placeholder="Add a comment" style="margin-bottom:0px;">
@@ -43,7 +44,7 @@ $(document).ready(function(){
 				data.map(e=>{
 					comments.append(`<p>${e.commentText}</p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
 				});
-				el.parent().append(comments);
+				$("#comments").append(comments);
 				el.remove();
 			}
 		});
