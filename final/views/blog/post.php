@@ -84,7 +84,7 @@ function refreshComments(){
 			success:function(data){
 				let comments = $("<div></div>");
 				data = JSON.parse(data);
-				if(data===null){
+				if(data!==null){
 					data.map(e=>{
 					comments.append(`<hr><p>${e.commentText}</p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
 				});
