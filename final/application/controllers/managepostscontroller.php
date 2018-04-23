@@ -58,6 +58,11 @@ class ManagePostsController extends Controller
         $this->set('task', 'update');
     }
 
+    public function delete($pID){
+        $this->postObject = new Post();
+
+    }
+
     public function update()
     {
         $this->postObject = new Post();
