@@ -66,7 +66,7 @@ $(document).ready(function(){
 });
 function Date_toYMD() {
         let year, month, day;
-		let date = Date.now();
+		let date = new Date(Date.now());
         year = String(date.getFullYear());
         month = String(date.getMonth() + 1);
         if (month.length == 1) {
