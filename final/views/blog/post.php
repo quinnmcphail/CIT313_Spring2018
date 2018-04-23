@@ -17,7 +17,7 @@ if (is_array($post)) {
 <hr>
 <h2>Comments</h2>
 <div id="comments" style="margin-top:15px;"></div>
-<a href="<?php echo BASE_URL; ?>ajax/get_post_comments/?pID=<?php echo $pID; ?>" class="btn post-loader">View All Comments</a>
+<a href="" class="btn comment-loader">View All Comments</a>
 <?php if ($u->isRegistered()) {?>
 	<form id="commentForm" method="post" style="margin-top:21px;">
           <input id="commentText" type="text" class="span6" name="commentText" placeholder="Add a comment" style="margin-bottom:0px;">
@@ -32,22 +32,10 @@ if (is_array($post)) {
 <?php include 'views/elements/footer.php';?>
 <script>
 $(document).ready(function(){
-	$('.post-loader').click(function(e){
+	$('.comment-loader').click(function(e){
 		e.preventDefault();
 		let el = $(this);
-		$.ajax({
-			url:el.attr('href'),
-			type:'GET',
-			success:function(data){
-				let comments = $("<div></div>");
-				data = JSON.parse(data);
-				data.map(e=>{
-					comments.append(`<p>${e.commentText}</p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
-				});
-				$("#comments").append(comments);
-				el.remove();
-			}
-		});
+
 	});
 	$('#submit').click(function(e) {
 		e.preventDefault();
@@ -88,4 +76,20 @@ function Date_toYMD() {
         }
         return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
     }
+function refreshComments(){
+	$.ajax({
+			url:"<?php echo BASE_URL; ?>ajax/get_post_comments/?pID=<?php echo $pID; ?>",
+			type:'GET',
+			success:function(data){
+				let comments = $("<div></div>");
+				data = JSON.parse(data);
+				data.map(e=>{
+					comments.append(`<p>${e.commentText}</p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
+				});
+				$("#comments").html("");
+				$("#comments").append(comments);
+				$('.comment-loader').remove();
+			}
+		});
+}
 </script>
