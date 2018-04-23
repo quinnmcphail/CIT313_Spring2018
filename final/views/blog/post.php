@@ -30,7 +30,8 @@ $(document).ready(function(){
 			url:el.attr('href'),
 			type:'GET',
 			success:function(data){
-				console.log(data);
+				el.parent().append(data);
+				el.remove();
 			}
 		});
 	});
