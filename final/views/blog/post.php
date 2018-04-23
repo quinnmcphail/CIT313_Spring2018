@@ -45,7 +45,6 @@ $(document).ready(function(){
              data: `${$("#commentForm").serialize()}&date=${Date_toYMD()}`,
              success: function(msg) {
 				 $("#commentText").val("");
-				 console.log(msg);
 				 refreshComments();
              }
           });
