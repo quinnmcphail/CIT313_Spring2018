@@ -18,7 +18,7 @@ if (is_array($post)) {
 <h2>Comments</h2>
 <div style="margin-top:15px;"><a href="<?php echo BASE_URL; ?>ajax/get_post_comments/?pID=<?php echo $pID; ?>" class="btn post-loader">View All Comments</a></div>
 <?php if ($u->isRegistered()) {?>
-	<form id="commentForm" method="post">
+	<form id="commentForm" method="post" style="margin-top:21px;">
           <input id="commentText" type="text" class="span6" name="commentText" placeholder="Add a comment" style="margin-bottom:0px;">
           <input type="hidden" name="pID" value="<?=$pID?>"/>
 		  <input type="hidden" name="uID" value="<?=$u->uID?>"/>
