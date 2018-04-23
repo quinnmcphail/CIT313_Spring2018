@@ -54,4 +54,11 @@ class AjaxController extends Controller
         $comments = $this->postObject->getAllComments($_GET['pID']);
         $this->set("response", json_encode($comments));
     }
+
+    public function add_post_comment(){
+        $this->postObject = new Post();
+        // $sql = "INSERT INTO comments (uID,commentText,date,postID) VALUES (?,?,?,?)";
+        // $this->db->execute($sql, $data);
+        $this->set("response",var_dump($_POST));
+    }
 }

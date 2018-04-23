@@ -17,6 +17,15 @@ if (is_array($post)) {
 <hr>
 <h2>Comments</h2>
 <div style="margin-top:15px;"><a href="<?php echo BASE_URL; ?>ajax/get_post_comments/?pID=<?php echo $pID; ?>" class="btn post-loader">View All Comments</a></div>
+<?php if ($u->isRegistered()) {?>
+	<form id="commentForm" method="post">
+          <label>Add A Comment</label>
+          <input type="text" class="span6" name="commentText">
+          <input type="hidden" name="pID" value="<?=$pID?>"/>
+		  <input type="hidden" name="uID" value="<?=$u->uID?>"/>
+          <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+<?php }?>
 </div>
 
 
@@ -40,5 +49,33 @@ $(document).ready(function(){
 			}
 		});
 	});
+	$('#commentForm').submit(function(e){
+		e.preventDefault();
+		$('#submit').click(function() {
+          $.ajax({
+             type: "POST",
+             url: "<?=BASE_URL?>ajax/add_post_comment",
+             data: {'form':$("#commentForm").serialize(),'date':Date_toYMD()},
+             success: function(msg) {
+                console.log(msg);
+             }
+          });
+
+       });
+	})
 });
+function Date_toYMD() {
+        let year, month, day;
+		let date = Date.now();
+        year = String(date.getFullYear());
+        month = String(date.getMonth() + 1);
+        if (month.length == 1) {
+            month = "0" + month;
+        }
+        day = String(date.getDate());
+        if (day.length == 1) {
+            day = "0" + day;
+        }
+        return year + "-" + month + "-" + day;
+    }
 </script>
