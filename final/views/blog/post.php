@@ -14,8 +14,26 @@ if (is_array($post)) {
 <sub><?php echo date("j F Y - g:i:s A", strtotime($date)); ?> by
 		<?php echo $userFN . " " . $userLN; ?> -
 		Category: <?php echo $catName; ?></sub>
-
+<hr>
+<h2>Comments</h2>
+<div style="margin-top:15px;"><a href="<?php echo BASE_URL; ?>ajax/get_post_comments/?pID=<?php echo $p['pID']; ?>" class="btn post-loader">View All Comments</a></div>
 </div>
 
 
 <?php include 'views/elements/footer.php';?>
+<script>
+$(document).ready(function(){
+	$('.post-loader').click(function(e){
+		e.preventDefault();
+		let el = $(this);
+		$.ajax({
+			url:el.attr('href'),
+			type:'GET',
+			success:function(data){
+				el.parent().append(data);
+				el.remove();
+			}
+		});
+	});
+});
+</script>

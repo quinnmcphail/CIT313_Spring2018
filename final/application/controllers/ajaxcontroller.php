@@ -41,9 +41,17 @@ class AjaxController extends Controller
         }
     }
 
-    public function get_post_content(){
+    public function get_post_content()
+    {
         $this->postObject = new Post();
         $post = $this->postObject->getPost($_GET['pID']);
-        $this->set("response",$post['content']);
+        $this->set("response", $post['content']);
+    }
+
+    public function get_post_comments()
+    {
+        $this->postObject = new Post();
+        $comments = $this->postObject->getAllComments($_GET['pID']);
+        $this->set("response", $comments);
     }
 }

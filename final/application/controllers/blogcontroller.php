@@ -10,9 +10,7 @@ class BlogController extends Controller
 
         $this->postObject = new Post();
         $post = $this->postObject->getPost($pID);
-        $comments = $this->postObject->getAllComments($pID);
         $this->set('post', $post);
-        $this->set('comments', $comments);
 
     }
 
