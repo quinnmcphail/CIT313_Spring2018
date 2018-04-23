@@ -65,10 +65,11 @@ $(document).ready(function(){
 	})
 });
 function Date_toYMD() {
-        let year, month, day;
+        let year, month, day,hour,minute,second;
 		let date = new Date(Date.now());
         year = String(date.getFullYear());
         month = String(date.getMonth() + 1);
+
         if (month.length == 1) {
             month = "0" + month;
         }
@@ -76,6 +77,18 @@ function Date_toYMD() {
         if (day.length == 1) {
             day = "0" + day;
         }
-        return year + "-" + month + "-" + day;
+		hour = String(date.getHours() + 1);
+		if (hour.length == 1) {
+            hour = "0" + hour;
+        }
+		minute = String(date.getMinutes());
+		if (minute.length == 1) {
+            minute = "0" + minute;
+        }
+		second = String(date.getSeconds());
+		if (second.length == 1) {
+            second = "0" + second;
+        }
+        return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
     }
 </script>
