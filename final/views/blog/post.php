@@ -91,9 +91,8 @@ function refreshComments(){
 							$.ajax({
              type: "POST",
              url: "<?=BASE_URL?>ajax/delete_post_comment",
-             data: `?commentID=${$("a",this).attr("comment")}`,
+             data: `commentID=${$("a",this).attr("comment")}`,
              success: function(msg) {
-				 console.log(msg);
 				 refreshComments();
              }
           })
