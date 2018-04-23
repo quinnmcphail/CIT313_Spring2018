@@ -21,7 +21,7 @@ if (is_array($post)) {
 <?php if ($u->isRegistered()) {?>
 	<form id="commentForm" method="post" style="margin-top:21px;">
           <input id="commentText" type="text" class="span6" name="commentText" placeholder="Add a comment" style="margin-bottom:0px;">
-          <input type="hidden" name="pID" value="<?=$pID?>"/>
+          <input type="hidden" name="postID" value="<?=$pID?>"/>
 		  <input type="hidden" name="uID" value="<?=$u->uID?>"/>
           <button id="submit" type="submit" class="btn btn-primary">Submit</button>
         </form>
