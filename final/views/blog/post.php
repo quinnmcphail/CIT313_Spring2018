@@ -49,10 +49,9 @@ $(document).ready(function(){
 			}
 		});
 	});
-	$('#commentForm').submit(function(e){
-		e.preventDefault();
 		$('#submit').click(function() {
-          $.ajax({
+			e.preventDefault();
+			$.ajax({
              type: "POST",
              url: "<?=BASE_URL?>ajax/add_post_comment",
              data: {'form':$("#commentForm").serialize(),'date':Date_toYMD()},
@@ -60,9 +59,7 @@ $(document).ready(function(){
                 console.log(msg);
              }
           });
-
        });
-	})
 });
 function Date_toYMD() {
         let year, month, day,hour,minute,second;
