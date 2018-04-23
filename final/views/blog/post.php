@@ -88,7 +88,7 @@ function refreshComments(){
 						let temp = $(`<hr><p>${e.commentText}<?php if ($u->isAdmin()) {?> <a comment="${e.commentID}" class="btn comment-deleter">Delete Comment</a><?php }?></p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
 						temp.click(function(e){
 							e.preventDefault();
-							console.log(this);
+							console.log($("a",this));
 						});
 					comments.append(temp);
 				});
