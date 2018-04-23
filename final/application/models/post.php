@@ -62,7 +62,7 @@ class Post extends Model
         $sql = 'SELECT comments.commentID, users.first_name as UserFN, users.last_name as UserLN, comments.commentText, comments.Date FROM comments JOIN users ON users.uID = comments.uID WHERE comments.postID = ?';
 
         // perform query
-        $results = $this->db->execute($sql);
+        $results = $this->db->execute($sql, $data);
 
         while ($row = $results->fetchrow()) {
             $comments[] = $row;
