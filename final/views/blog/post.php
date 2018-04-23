@@ -77,7 +77,7 @@ function Date_toYMD() {
         if (day.length == 1) {
             day = "0" + day;
         }
-		hour = String(date.getHours() + 1);
+		hour = String(date.getHours());
 		if (hour.length == 1) {
             hour = "0" + hour;
         }
