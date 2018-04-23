@@ -33,7 +33,7 @@ $(document).ready(function(){
 				let comments = $("<div></div>");
 				data = JSON.parse(data);
 				data.map(e=>{
-					comments.append(`<hr><p>${e.commentText}</p><sub>${e.userFN} ${e.userLN} commented on ${e.Date}</sub>`);
+					comments.append(`<hr><p>${e.commentText}</p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
 				});
 				el.parent().append(comments);
 				el.remove();
