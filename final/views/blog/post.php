@@ -93,9 +93,10 @@ function refreshComments(){
              url: "<?=BASE_URL?>ajax/delete_post_comment",
              data: `${$("a",this).attr("comment")}`,
              success: function(msg) {
+				 console.log(msg);
 				 refreshComments();
              }
-          });
+          })
 						});
 					comments.append(temp);
 				});
