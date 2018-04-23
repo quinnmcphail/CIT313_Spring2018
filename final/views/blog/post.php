@@ -85,7 +85,7 @@ function refreshComments(){
 				data = JSON.parse(data);
 				if(data!==null){
 					data.map(e=>{
-					comments.append(`<hr><p>${e.commentText}<?php if ($u->isAdmin()) {?> <a href="" comment="${e.commentID}" onclick="deleteComment(e)" class="btn comment-deleter">Delete Comment</a><?php }?></p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
+					comments.append(`<hr><p>${e.commentText}<?php if ($u->isAdmin()) {?> <a href="" comment="${e.commentID}" onclick="function(e){e.preventDefault;let el=$(this);refreshComments();}" class="btn comment-deleter">Delete Comment</a><?php }?></p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
 				});
 				}else{
 					comments.append("<hr><p>No comments.</p>")
@@ -95,11 +95,6 @@ function refreshComments(){
 				$('.comment-loader').remove();
 			}
 		});
-}
-function deleteComment(e){
-	e.preventDefault();
-	let el = $(this);
-	refreshComments();
 }
 });
 </script>
