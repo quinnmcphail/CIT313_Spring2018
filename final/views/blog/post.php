@@ -85,7 +85,7 @@ function refreshComments(){
 				data = JSON.parse(data);
 				if(data!==null){
 					data.map(e=>{
-					comments.append(`<hr><p>${e.commentText}<?php if ($u->isAdmin()) {?> <div comment="${e.commentID}" onclick="function(e){console.log('click');let el=$(this);refreshComments();}" class="btn comment-deleter">Delete Comment</div><?php }?></p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
+					comments.append(`<hr><p>${e.commentText}<?php if ($u->isAdmin()) {?> <div comment="${e.commentID}" onclick="(function(e){console.log('click');let el=$(this);refreshComments();})();" class="btn comment-deleter">Delete Comment</div><?php }?></p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
 				});
 				}else{
 					comments.append("<hr><p>No comments.</p>")
