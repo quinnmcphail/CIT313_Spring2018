@@ -60,7 +60,8 @@ class ManagePostsController extends Controller
 
     public function delete($pID){
         $this->postObject = new Post();
-
+        $this->postObject->deletePost($pID);
+        header("Location: " . BASE_URL . '/blog');
     }
 
     public function update()

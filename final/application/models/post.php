@@ -70,6 +70,13 @@ class Post extends Model
         return $message;
     }
 
+    public function deletePost($data){
+        $sql = 'DELETE FROM posts WHERE pID = ?';
+        $this->db->execute($sql, $data);
+        $message = 'Post updated.';
+        return $message;
+    }
+
     public function getAllComments($data)
     {
 
