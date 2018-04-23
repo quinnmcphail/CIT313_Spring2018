@@ -45,7 +45,6 @@ $(document).ready(function(){
              data: `${$("#commentForm").serialize()}&date=${Date_toYMD()}`,
              success: function(msg) {
 				 $("#commentText").val("");
-				 console.log(msg);
 				 refreshComments();
              }
           });
@@ -85,9 +84,13 @@ function refreshComments(){
 			success:function(data){
 				let comments = $("<div></div>");
 				data = JSON.parse(data);
-				data.map(e=>{
+				if(data===null){
+					data.map(e=>{
 					comments.append(`<hr><p>${e.commentText}</p><sub>${e.UserFN} ${e.UserLN} commented on ${e.Date}</sub>`);
 				});
+				}else{
+					comments.append("<hr><p>No comments.</p>")
+				}
 				$("#comments").html("");
 				$("#comments").append(comments);
 				$('.comment-loader').remove();
