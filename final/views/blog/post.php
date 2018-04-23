@@ -20,7 +20,7 @@ if (is_array($post)) {
 <?php if ($u->isRegistered()) {?>
 	<form id="commentForm" method="post">
           <label>Add A Comment</label>
-          <input type="text" class="span6" name="commentText">
+          <input id="commentText" type="text" class="span6" name="commentText">
           <input type="hidden" name="pID" value="<?=$pID?>"/>
 		  <input type="hidden" name="uID" value="<?=$u->uID?>"/>
           <button id="submit" type="submit" class="btn btn-primary">Submit</button>
@@ -56,7 +56,7 @@ $(document).ready(function(){
              url: "<?=BASE_URL?>ajax/add_post_comment",
              data: {'form':$("#commentForm").serialize(),'date':Date_toYMD()},
              success: function(msg) {
-                console.log(msg);
+				 $("#commentText").val("");
              }
           });
        });
