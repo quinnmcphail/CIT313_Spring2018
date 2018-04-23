@@ -49,10 +49,9 @@ class Post extends Model
     }
 
     public function addComment($data){
-        // $sql = "INSERT INTO comments (uID,commentText,date,postID) VALUES (?,?,?,?)";
-        // $this->db->execute($sql, $data);
-        // $message = 'Comment added.';
-        $message = $data;
+        $sql = "INSERT INTO comments (commentText,postID,uID,date) VALUES (?,?,?,?)";
+        $this->db->execute($sql, $data);
+        $message = 'Comment added.';
         return $message;
     }
 
