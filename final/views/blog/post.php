@@ -49,8 +49,7 @@ $(document).ready(function(){
              }
           });
        });
-});
-function Date_toYMD() {
+	   function Date_toYMD() {
         let year, month, day,hour,minute,second;
 		let date = new Date(Date.now());
         year = String(date.getFullYear());
@@ -102,4 +101,5 @@ function deleteComment(e){
 	let el = $(this);
 	refreshComments();
 }
+});
 </script>
