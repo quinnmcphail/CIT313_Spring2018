@@ -97,7 +97,7 @@ function refreshComments(){
 			}
 		});
 }
-function deleteComments(e){
+function deleteComment(e){
 	e.preventDefault();
 	let el = $(this);
 	refreshComments();
