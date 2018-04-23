@@ -14,7 +14,8 @@ if (is_array($post)) {
 <sub><?php echo date("j F Y - g:i:s A", strtotime($date)); ?> by
 		<?php echo $userFN . " " . $userLN; ?> -
 		Category: <?php echo $catName; ?></sub>
-
+<hr>
+<h2>Comments</h2>
 </div>
 
 
