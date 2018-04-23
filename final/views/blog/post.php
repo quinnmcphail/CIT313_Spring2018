@@ -31,6 +31,7 @@ $(document).ready(function(){
 			type:'GET',
 			success:function(data){
 				let comments = $("<div></div>");
+				data = JSON.parse(data);
 				data.map(e=>{
 					comments.append(`<hr><p>${e.commentText}</p><sub>${e.userFN} ${userLN} commented on ${e.Date}</sub>`);
 				});
