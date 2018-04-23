@@ -55,6 +55,13 @@ class Post extends Model
         return $message;
     }
 
+    public function deleteComment($data){
+        $sql = "DELETE FROM comments WHERE commentID=?";
+        $this->db->execute($sql, $data);
+        $message = 'Comment deleted.';
+        return $message;
+    }
+
     public function updatePost($data)
     {
         $sql = 'UPDATE posts SET title = ?, content = ?, date = ?, categoryID = ? WHERE pID = ?';

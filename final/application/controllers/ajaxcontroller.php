@@ -61,4 +61,11 @@ class AjaxController extends Controller
         $message = $this->postObject->addComment($_POST);
         $this->set("response", var_dump($message));
     }
+
+    public function delete_post_comment()
+    {
+        $this->postObject = new Post();
+        $message = $this->postObject->deleteComment($_POST);
+        $this->set("response", var_dump($message));
+    }
 }
