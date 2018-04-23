@@ -49,9 +49,9 @@ $(document).ready(function(){
 			}
 		});
 	});
-		$('#submit').click(function() {
-			e.preventDefault();
-			$.ajax({
+	$('#submit').click(function(e) {
+		e.preventDefault();
+          $.ajax({
              type: "POST",
              url: "<?=BASE_URL?>ajax/add_post_comment",
              data: {'form':$("#commentForm").serialize(),'date':Date_toYMD()},
