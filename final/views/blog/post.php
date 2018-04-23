@@ -30,7 +30,11 @@ $(document).ready(function(){
 			url:el.attr('href'),
 			type:'GET',
 			success:function(data){
-				el.parent().append(data);
+				let comments = $("<div></div>");
+				data.map(e=>{
+					comments.append(`<hr><p>${e.commentText}</p><sub>${e.userFN} ${userLN} commented on ${e.Date}</sub>`);
+				});
+				el.parent().append(comments);
 				el.remove();
 			}
 		});
