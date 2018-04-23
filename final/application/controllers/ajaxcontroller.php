@@ -56,9 +56,8 @@ class AjaxController extends Controller
     }
 
     public function add_post_comment(){
-        $this->postObject = new Post();
-        // $sql = "INSERT INTO comments (uID,commentText,date,postID) VALUES (?,?,?,?)";
-        // $this->db->execute($sql, $data);
+        // $this->postObject = new Post();
+        // $message = $this->postObject->addComment($_POST['form'][''])
         $this->set("response",var_dump($_POST));
     }
 }

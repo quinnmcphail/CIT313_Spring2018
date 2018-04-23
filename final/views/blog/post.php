@@ -42,9 +42,10 @@ $(document).ready(function(){
           $.ajax({
              type: "POST",
              url: "<?=BASE_URL?>ajax/add_post_comment",
-             data: {'form':$("#commentForm").serialize(),'date':Date_toYMD()},
+             data: `${$("#commentForm").serialize()}&date=${Date_toYMD()}`,
              success: function(msg) {
 				 $("#commentText").val("");
+				 console.log(msg);
 				 refreshComments();
              }
           });
