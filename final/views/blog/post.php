@@ -35,7 +35,7 @@ $(document).ready(function(){
 	$('.comment-loader').click(function(e){
 		e.preventDefault();
 		let el = $(this);
-
+		refreshComments();
 	});
 	$('#submit').click(function(e) {
 		e.preventDefault();
@@ -45,6 +45,7 @@ $(document).ready(function(){
              data: {'form':$("#commentForm").serialize(),'date':Date_toYMD()},
              success: function(msg) {
 				 $("#commentText").val("");
+				 refreshComments();
              }
           });
        });
