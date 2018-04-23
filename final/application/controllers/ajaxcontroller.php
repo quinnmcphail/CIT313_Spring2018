@@ -58,7 +58,8 @@ class AjaxController extends Controller
     public function add_post_comment()
     {
         $this->postObject = new Post();
-        $message = $this->postObject->addComment($_POST['uID'], $_POST['commentText'], $_POST['date'], $_POST['pID']);
+        //$_POST['uID'], $_POST['commentText'], $_POST['date'], $_POST['pID']
+        $message = $this->postObject->addComment("Test");
         $this->set("response", $message);
     }
 }
