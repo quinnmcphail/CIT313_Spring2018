@@ -12,8 +12,8 @@
 	<?php foreach ($posts as $p) {?>
     <h3><a href="<?php echo BASE_URL ?>blog/post/<?php echo $p['pID']; ?>" title="<?php echo $p['title']; ?>"><?php echo $p['title']; ?></a></h3>
 	<?php if($u->isAdmin()){?>
-	<a class="btn" href="<?= BASE_URL ?>/manageposts/edit/<?=$p['pID']?>">Edit Post</a>
-	<a class="btn" href="<?= BASE_URL ?>/manageposts/delete/<?=$p['pID']?>">Delete Post</a>
+	<a class="btn" href="<?= BASE_URL ?>manageposts/edit/<?=$p['pID']?>">Edit Post</a>
+	<a class="btn" href="<?= BASE_URL ?>manageposts/delete/<?=$p['pID']?>">Delete Post</a>
 	<?php }?>
 
 	<sub><?php echo date("j F Y - g:i:s A", strtotime($p['date'])); ?> by
