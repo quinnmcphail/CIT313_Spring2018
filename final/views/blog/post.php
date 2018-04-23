@@ -49,11 +49,6 @@ $(document).ready(function(){
              }
           });
        });
-	$('.comment-deleter').click(function(e){
-		e.preventDefault();
-		let el = $(this);
-		console.log(el.attr('comment'));
-	})
 });
 function Date_toYMD() {
         let year, month, day,hour,minute,second;
