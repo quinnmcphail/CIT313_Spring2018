@@ -59,6 +59,6 @@ class AjaxController extends Controller
     {
         $this->postObject = new Post();
         $message = $this->postObject->addComment($_POST);
-        $this->set("response", $message);
+        $this->set("response", var_dump($message));
     }
 }
