@@ -52,6 +52,6 @@ class AjaxController extends Controller
     {
         $this->postObject = new Post();
         $comments = $this->postObject->getAllComments($_GET['pID']);
-        $this->set("response", $comments);
+        $this->set("response", json_encode($comments));
     }
 }
