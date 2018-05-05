@@ -17,8 +17,8 @@
         <td><a href="<?php echo BASE_URL ?>members/user/<?=$u['uID'];?>"><?=$u['email'];?></a></td>
         <td><?=$u['first_name'];?></td>
         <td><?=$u['last_name'];?></td>
-        <td><?php if($u['active']==0){ ?><a href="<?=BASE_URL;?>/manageusers/approve/<?=$u['uID'];?>" class="btn">Approve</a><?php } ?></td>
-        <td><?php if($u['user_type']!=1){ ?><a href="<?=BASE_URL;?>/manageusers/delete/<?=$u['uID'];?>" class="btn">Delete</a><?php } ?></td>
+        <td><?php if($u['active']==0){ ?><a href="<?=BASE_URL;?>manageusers/approve/<?=$u['uID'];?>" class="btn">Approve</a><?php } ?></td>
+        <td><?php if($u['user_type']!=1){ ?><a href="<?=BASE_URL;?>manageusers/delete/<?=$u['uID'];?>" class="btn">Delete</a><?php } ?></td>
     </tr>
     <?php }?>
   </table>
