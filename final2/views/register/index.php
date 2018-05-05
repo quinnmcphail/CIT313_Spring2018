@@ -13,25 +13,25 @@
   <div class="control-group">
     <label class="control-label" for="inputEmail">Email</label>
     <div class="controls">
-      <input type="text" id="inputEmail" name="email" placeholder="Email">
+      <input type="text" id="inputEmail" name="email" placeholder="Email" required>
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputFirstName">First Name</label>
     <div class="controls">
-      <input type="text" id="inputFirstName" name="firstName" placeholder="First Name">
+      <input type="text" id="inputFirstName" name="firstName" placeholder="First Name" required>
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputFirstName">Last Name</label>
     <div class="controls">
-      <input type="text" id="inputLastName" name="lastName" placeholder="Last Name">
+      <input type="text" id="inputLastName" name="lastName" placeholder="Last Name" required>
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputPassword">Password</label>
     <div class="controls">
-      <input type="password" id="inputPassword" name="password" placeholder="Password">
+      <input type="password" id="inputPassword" name="password" placeholder="Password" required>
     </div>
   </div>
   <div class="control-group">
