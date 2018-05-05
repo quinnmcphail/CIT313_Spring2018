@@ -1,5 +1,11 @@
 <?php include 'views/elements/header.php';?>
 <div class="container">
+<?php if ($message) {?>
+    <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    	<?=$message?>
+    </div>
+  <?php }?>
 	<div class="page-header">
    <h1><?=$title?></h1>
   </div>
