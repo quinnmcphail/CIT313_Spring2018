@@ -13,7 +13,7 @@ if (is_array($post)) {
 <p><?php echo $content; ?></p>
 <sub><?php echo date("j F Y - g:i:s A", strtotime($date)); ?> by
 		<?php echo $userFN . " " . $userLN; ?> -
-		Category: <?php echo $catName; ?></sub>
+		Category: <a href="<?= BASE_URL ?>blog/category/<?= $categoryID ?>"><?php echo $catName; ?></a></sub>
 <hr>
 <h2>Comments</h2>
 <div id="comments" style="margin-top:15px;"></div>

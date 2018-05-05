@@ -38,6 +38,17 @@ class Post extends Model
 
     }
 
+    public function getAllPostsWithCat($cat){
+        $sql = $sql = 'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName FROM posts WHERE posts.categoryID = ? JOIN users ON posts.uID = users.uID JOIN categories ON posts.categoryID =categories.categoryID';
+        $results = $this->db->execute($sql,array($cat));
+
+        while ($row = $results->fetchrow()) {
+            $posts[] = $row;
+        }
+
+        return $posts;
+    }
+
     public function addPost($data)
     {
 

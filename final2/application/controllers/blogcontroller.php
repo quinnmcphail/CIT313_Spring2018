@@ -14,6 +14,13 @@ class BlogController extends Controller
 
     }
 
+    public function category($cat){
+        $this->postObject = new Post();
+        $posts = $this->postObject->getAllPostsWithCat($cat);
+        $this->set('title', 'Posts With Category');
+        $this->set('posts', $posts);
+    }
+
     public function index()
     {
 

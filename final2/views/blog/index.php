@@ -17,7 +17,7 @@
 
 	<sub><?php echo date("j F Y - g:i:s A", strtotime($p['date'])); ?> by
 		<?php echo $p['userFN'] . " " . $p['userLN']; ?> -
-		Category: <?php echo $p['catName']; ?></sub>
+		Category: <a href="<?= BASE_URL ?>blog/category/<?= $p['categoryID'] ?>"><?php echo $p['catName']; ?></a></sub>
 	<div style="margin-top:15px;"><a href="<?php echo BASE_URL; ?>ajax/get_post_content/?pID=<?php echo $p['pID']; ?>" class="btn post-loader">View entire post</a></div>
 <?php }?>
 </div>
