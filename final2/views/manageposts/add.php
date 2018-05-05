@@ -18,7 +18,7 @@
           <label>Date</label>
           <input type="datetime-local" name="post_date" value="<?=date("Y-m-d\TH:i:s", strtotime($date));?>" required>
           <label>Category</label>
-          <select name="post_category" required>
+          <select name="post_category">
           <?php if (is_array($categories)) {
     foreach ($categories as $c) {?>
             <option value="<?=$c["categoryID"];?>" <?=$categoryID == $c["categoryID"] ? 'selected' : '';?>><?=$c["name"];?></option>
