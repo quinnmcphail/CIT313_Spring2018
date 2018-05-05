@@ -9,7 +9,7 @@
     	<?=$message?>
     </div>
   <?php }?>
-   <form class="form-horizontal" action="<?=BASE_URL?>register/<?=$task?>" method="post">
+   <form id="registerForm" class="form-horizontal" action="<?=BASE_URL?>register/<?=$task?>" method="post">
   <div class="control-group">
     <label class="control-label" for="inputEmail">Email</label>
     <div class="controls">
@@ -35,11 +35,29 @@
     </div>
   </div>
   <div class="control-group">
+    <label class="control-label" for="inputPasswordVerify">Password Verify</label>
+    <div class="controls">
+      <input type="password" id="inputPasswordVerify" name="passwordVerify" placeholder="Password" required>
+    </div>
+  </div>
+  <div class="control-group">
     <div class="controls">
       <button type="submit" class="btn">Register</button>
     </div>
   </div>
 </form>
 </div>
+<script>
+$(document).ready(function(){
+  $('#registerForm').submit(function(e){
+    e.preventDefault();
+    if($('#inputPassword').val()===$('#inputPasswordVerify')){
+      this.submit();
+    }else{
+      $('#registerForm').append('<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>Passwords do not match.</div>');
+    }
+  })
+});
+</script>
 <?php include 'views/elements/footer.php';?>
 
