@@ -65,6 +65,9 @@ if ($u->isAdmin()) {?>
                                <li>
                                    <a href="<?php echo BASE_URL ?>manageposts/">Manage Posts</a>
                                </li>
+                               <li>
+                                  <a href="<?php echo BASE_URL ?>manageusers/">Manage Users</a>
+                               </li>
                            <?php }?>
                            <li>
                                <a href="<?php echo BASE_URL ?>login/logout/">Log Out </a>
