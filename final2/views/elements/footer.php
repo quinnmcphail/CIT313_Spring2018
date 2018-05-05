@@ -7,7 +7,7 @@
 <?php
 if ($u->isAdmin()) {
     ?>
-    <script src="<?php echo BASE_URL ?>application/plugins/tinymce.min.js"></script>
+    <script src="<?php echo BASE_URL ?>application/plugins/tinymce/tinymce.min.js"></script>
     <script>
 	tinymce.init({selector:'#tinyeditor'});
 		</script>
