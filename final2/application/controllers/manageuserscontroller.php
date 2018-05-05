@@ -1,6 +1,6 @@
 <?php
 
-class MembersController extends Controller
+class ManageUsersController extends Controller
 {
 
     public $userObject;
