@@ -39,7 +39,7 @@ class Post extends Model
     }
 
     public function getAllPostsWithCat($cat){
-        $sql = 'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName FROM posts WHERE posts.categoryID = ? JOIN users ON posts.uID = users.uID JOIN categories ON posts.categoryID =categories.categoryID';
+        $sql = 'SELECT posts.pID, posts.title, posts.content, posts.date, posts.uID, users.first_name as userFN, users.last_name as userLN, posts.categoryID, categories.name as catName FROM posts JOIN users ON posts.uID = users.uID JOIN categories ON posts.categoryID =categories.categoryID WHERE posts.categoryID = ?';
         $results = $this->db->execute($sql,array($cat));
 
         while ($row = $results->fetchrow()) {
