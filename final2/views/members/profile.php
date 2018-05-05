@@ -9,7 +9,7 @@
     	<?=$message?>
     </div>
   <?php }?>
-   <form id="registerForm" class="form-horizontal" action="<?=BASE_URL?>members/profile" method="post">
+   <form id="registerForm" class="form-horizontal" action="<?=BASE_URL?>members/update" method="post">
   <div class="control-group">
     <label class="control-label" for="inputEmail">Email</label>
     <div class="controls">

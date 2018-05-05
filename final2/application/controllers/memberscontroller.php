@@ -15,6 +15,10 @@ class MembersController extends Controller
     }
 
     public function profile(){
+
+    }
+
+    public function update(){
         $this->userObject = new User();
         if ($_POST['password'] == "" && $_POST['passwordVerify'] == "") {
             $data = array('first_name' => $_POST['firstName'], 'last_name' => $_POST['lastName'], 'email' => $_POST['email'], 'uID' => $_POST['uID']);
@@ -30,6 +34,9 @@ class MembersController extends Controller
             }
         }
         $this->set('message', $result);
+        $users = $this->userObject->getAllUsers();
+        $this->set('title', 'Users');
+        $this->set('users', $users);
     }
 
     public function index()
