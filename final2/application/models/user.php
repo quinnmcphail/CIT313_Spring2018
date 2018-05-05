@@ -100,6 +100,20 @@ class User extends Model
         return $message;
     }
 
+    public function updateUser($data){
+        $sql = 'UPDATE users SET first_name = ?, last_name = ?, email = ? WHERE uID = ?';
+        $this->db->execute($sql, $data);
+        $message = 'User has updated.';
+        return $message;
+    }
+
+    public function updateUserPass($data){
+        $sql = 'UPDATE users SET first_name = ?, last_name = ?, email = ?, password = ? WHERE uID = ?';
+        $this->db->execute($sql, $data);
+        $message = 'User has updated.';
+        return $message;
+    }
+
     public function deleteUser($data){
         $sql = 'DELETE FROM users WHERE uID = ?';
         $this->db->execute($sql, $data);
