@@ -9,7 +9,12 @@ if ($u->isAdmin()) {
     ?>
     <script src="<?php echo BASE_URL ?>application/plugins/tinymce/tinymce.min.js"></script>
     <script>
-	tinymce.init({selector:'#tinyeditor'});
+	tinymce.init({selector:'#tinyeditor',
+	setup: function(ed){
+		ed.on('submit',function(e){
+			ed.save();
+		})
+	}});
 		</script>
  <?php }?>
   </body>

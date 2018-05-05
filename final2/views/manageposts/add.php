@@ -25,7 +25,7 @@
           <?php }}?>
           </select>
      			<label>Content</label>
-          <textarea id="tinyeditor" name="post_content" style="width:556px;height: 200px"></textarea>
+          <textarea id="tinyeditor" name="post_content" style="width:556px;height: 200px" required></textarea>
     			<br/>
           <button id="submit" type="submit" class="btn btn-primary" >Submit</button>
         </form>
