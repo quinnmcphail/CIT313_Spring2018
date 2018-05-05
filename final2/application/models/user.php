@@ -97,17 +97,29 @@ class User extends Model
         $sql = 'INSERT INTO users (first_name,last_name,email,password) VALUES (?,?,?,?)';
         $this->db->execute($sql, $data);
         $message = 'User has registered.';
-        return var_dump($data);
+        return $message;
     }
 
     public function checkUser($email, $password)
     {
-        $sql = "SELECT email, password FROM users WHERE email = ?";
+        $sql = "SELECT email, password, uID FROM users WHERE email = ?";
         $result = $this->db->getrow($sql, array($email));
+        $this->uID = $result[2];
         $password_db = $result[1];
         if (password_verify($password, $password_db)) {
             return true;
         } else {
+            return false;
+        }
+    }
+
+    public function checkActive($uID){
+        $sql = "SELECT active FROM users WHERE uID = ?";
+        $result = $this->db->getrow($sql,array($uID));
+        $active = $result[0];
+        if($active == 1){
+            return true;
+        }else{
             return false;
         }
     }
