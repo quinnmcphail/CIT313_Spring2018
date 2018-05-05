@@ -100,6 +100,20 @@ class User extends Model
         return $message;
     }
 
+    public function deleteUser($data){
+        $sql = 'DELETE FROM users WHERE uID = ?';
+        $this->db->execute($sql, $data);
+        $message = 'User has been deleted';
+        return $message;
+    }
+
+    public function approveUser($data){
+        $sql = 'UPDATE users SET active = 1 WHERE uID = ?';
+        $this->db->execute($sql, $data);
+        $message = 'User has been approved';
+        return $message;
+    }
+
     public function checkUser($email, $password)
     {
         $sql = "SELECT email, password, uID FROM users WHERE email = ?";

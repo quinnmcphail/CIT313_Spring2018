@@ -25,4 +25,20 @@ class ManageUsersController extends Controller
 
     }
 
+    public function delete($uID){
+        $this->userObject = new User();
+        $message = $this->userObject->deleteUser($uID);
+        $users = $this->userObject->getAllUsers();
+        $this->set('users', $users);
+        $this->set('message', $message);
+    }
+
+    public function approve($uID){
+        $this->userObject = new User();
+        $message = $this->userObject->approveUser($uID);
+        $users = $this->userObject->getAllUsers();
+        $this->set('users', $users);
+        $this->set('message', $message);
+    }
+
 }
