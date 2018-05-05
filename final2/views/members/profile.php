@@ -42,7 +42,7 @@
   </div>
   <div class="control-group">
     <div class="controls">
-        <input type="hidden" name="uID" value="<?=$uID?>"/>
+        <input type="hidden" name="uID" value="<?=$u->uID?>"/>
       <button type="submit" class="btn">Update</button>
     </div>
   </div>

@@ -103,14 +103,14 @@ class User extends Model
     public function updateUser($data){
         $sql = 'UPDATE users SET first_name = ?, last_name = ?, email = ? WHERE uID = ?';
         $this->db->execute($sql, $data);
-        $message = 'User has updated.';
+        $message = 'User has been updated.';
         return $message;
     }
 
     public function updateUserPass($data){
         $sql = 'UPDATE users SET first_name = ?, last_name = ?, email = ?, password = ? WHERE uID = ?';
         $this->db->execute($sql, $data);
-        $message = 'User has updated.';
+        $message = 'User has been updated.';
         return $message;
     }
 
