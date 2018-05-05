@@ -60,6 +60,9 @@ if ($u->isRegistered()) {
                            <?php echo $u->getUserName(); ?><b class="caret"></b>
                        </a>
                        <ul class="dropdown-menu" role="menu">
+                                <li>
+                                   <a href="<?php echo BASE_URL ?>members/profile">My Profile</a>
+                               </li>
                            <?php
 if ($u->isAdmin()) {?>
                                <li>
