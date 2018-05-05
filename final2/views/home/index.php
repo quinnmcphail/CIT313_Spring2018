@@ -54,6 +54,7 @@ function getCrypto(data){
     let obj = dataObj.data[coin];
     coins.push(`<li>${obj.name} (${obj.symbol}) - $${obj.quotes.USD.price}</li>`);
   }
+  console.log(coins);
   base.append(coins.join(''));
   base.append($('</ol>'));
 }
