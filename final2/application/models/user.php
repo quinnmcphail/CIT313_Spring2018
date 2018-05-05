@@ -97,7 +97,7 @@ class User extends Model
         $sql = 'INSERT INTO users (first_name,last_name,email,password) VALUES (?,?,?,?)';
         $this->db->execute($sql, $data);
         $message = 'User has registered.';
-        return $message;
+        return var_dump($data);
     }
 
     public function checkUser($email, $password)

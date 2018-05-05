@@ -47,15 +47,5 @@
   </div>
 </form>
 </div>
-<script>
-$('#registerForm').submit(function(e){
-    e.preventDefault();
-    if($('#inputPassword').val()===$('#inputPasswordVerify').val()){
-      this.submit();
-    }else{
-      $('#registerForm').append('<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>Passwords do not match.</div>');
-    }
-  });
-</script>
 <?php include 'views/elements/footer.php';?>
 
