@@ -24,7 +24,8 @@
   <?php }?>
 </div>
 <div class="span4">
-<h1>Test</h1>
+<h1>Crypto Ticker</h1>
+<div id="crypto"></div>
 </div>
 </div>
 </div>
@@ -37,7 +38,24 @@ $(document).ready(function(){
     }).then((data)=>{
       getLocation(data);
     });
+    $.ajax({
+      type:'GET',
+      url: '<?php echo BASE_URL; ?>ajax/get_crypto_ticker'
+    }).then(data=>{
+      getCrypto(data);
+    })
 });
+
+function getCrypto(data){
+  let dataObj = JSON.parse(data);
+  let base = $('<ol>');
+  let coins = [];
+  dataObj.data.map(e=>{
+    coins.push(`<li>${e.name} (${e.symbol}) - $${e.quotes.USD.price}</li>`);
+  });
+  base.append(coins.join(''));
+  base.append($('</ol>'));
+}
 
 function getLocation(geo){
     var latitude = geo.location.lat;
