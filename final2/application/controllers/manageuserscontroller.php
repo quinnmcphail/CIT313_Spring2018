@@ -30,6 +30,7 @@ class ManageUsersController extends Controller
         $message = $this->userObject->deleteUser($uID);
         $users = $this->userObject->getAllUsers();
         $this->set('users', $users);
+        $this->set('title', 'Manage Users');
         $this->set('message', $message);
     }
 
@@ -38,6 +39,7 @@ class ManageUsersController extends Controller
         $message = $this->userObject->approveUser($uID);
         $users = $this->userObject->getAllUsers();
         $this->set('users', $users);
+        $this->set('title', 'Manage Users');
         $this->set('message', $message);
     }
 
