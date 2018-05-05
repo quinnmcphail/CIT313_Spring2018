@@ -17,6 +17,8 @@
         <td><a href="<?php echo BASE_URL ?>members/user/<?=$u['uID'];?>"><?=$u['email'];?></a></td>
         <td><?=$u['first_name'];?></td>
         <td><?=$u['last_name'];?></td>
+        <td><?php if($u['active']==0){ ?><button class="btn">Approve</button><?php } ?></td>
+        <td><?php if($u['user_type']!=1){ ?><button class="btn">Delete</button><?php } ?></td>
     </tr>
     <?php }?>
   </table>
