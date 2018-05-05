@@ -50,9 +50,10 @@ function getCrypto(data){
   let dataObj = JSON.parse(data);
   let base = $('<ol>');
   let coins = [];
-  dataObj.data.map(e=>{
-    coins.push(`<li>${e.name} (${e.symbol}) - $${e.quotes.USD.price}</li>`);
-  });
+  for(let coin in dataObj.data){
+    let obj = dataObj.data[coin];
+    coins.push(`<li>${obj.name} (${obj.symbol}) - $${obj.quotes.USD.price}</li>`);
+  }
   base.append(coins.join(''));
   base.append($('</ol>'));
 }
